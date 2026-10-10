@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lê Xuân Nhất – Nhà phát triển ứng dụng</title>
-<meta name="description" content="Lê Xuân Nhất, nhà phát triển ứng dụng di động. Liên hệ: rabbitvy.dev@gmail.com">
+<meta name="description" content="Lê Xuân Nhất, nhà phát triển ứng dụng di động: iLoveBK và Ôn thi GPLX. Liên hệ: rabbitvy.dev@gmail.com">
 <style>
   :root { --bg: #ffffff; --fg: #1d1d1f; --muted: #6e6e73; --line: #e5e5ea; --link: #0066cc; --card: #f5f5f7; }
   @media (prefers-color-scheme: dark) {
@@ -16,9 +16,15 @@
   h1 { font-size: 1.8em; line-height: 1.3; margin: 0; }
   .tagline { color: var(--muted); margin: 4px 0 0; }
   h2 { font-size: 1.15em; margin: 2em 0 .5em; }
+  h3 { font-size: 1.1em; margin: 0; }
   p { margin: .4em 0; }
   a { color: var(--link); overflow-wrap: anywhere; }
   .card { background: var(--card); border-radius: 12px; padding: 16px; margin: .8em 0; }
+  .app { display: flex; gap: 16px; align-items: flex-start; }
+  .app img { width: 72px; height: 72px; border-radius: 16px; flex: none;
+             box-shadow: 0 0 0 1px var(--line); }
+  .app ul { margin: .4em 0; padding-left: 1.2em; }
+  .links { font-size: .95em; }
   hr { border: 0; border-top: 1px solid var(--line); margin: 3em 0 1.5em; }
   footer { color: var(--muted); font-size: .9em; }
 </style>
@@ -28,16 +34,46 @@
 <h1>Lê Xuân Nhất</h1>
 <p class="tagline">Nhà phát triển ứng dụng di động</p>
 
+<h2 id="ung-dung">Ứng dụng</h2>
+
+<div class="card app" id="ilovebk">
+  <img src="images/ilovebk.png" alt="Biểu tượng iLoveBK">
+  <div>
+    <h3>iLoveBK</h3>
+    <p>Công cụ hỗ trợ học tập cho sinh viên Đại học Bách khoa Hà Nội.</p>
+    <ul>
+      <li>Bảng điểm, chương trình đào tạo, tính điểm dự kiến</li>
+      <li>Thời khoá biểu, thông báo lịch học, tiện ích lịch học trên màn hình chính</li>
+      <li>Học phí, điểm TOEIC, bản đồ trường, review học phần</li>
+    </ul>
+    <p class="links"><a href="privacy.html">Chính sách quyền riêng tư</a></p>
+  </div>
+</div>
+
+<div class="card app" id="gplx">
+  <img src="images/gplx.png" alt="Biểu tượng Ôn thi GPLX">
+  <div>
+    <h3>Ôn thi GPLX</h3>
+    <p>Ôn thi lý thuyết giấy phép lái xe theo bộ 600 câu hỏi mới, không quảng cáo.</p>
+    <ul>
+      <li>Ôn theo hạng A1, A, B1, B, C1, C, D…, câu điểm liệt, câu hay sai</li>
+      <li>Thi thử có đồng hồ, bộ đề cố định phủ hết câu hỏi</li>
+      <li>Tra cứu biển báo, mẹo thi, widget "Ôn nhanh" trên màn hình chính</li>
+    </ul>
+    <p class="links"><a href="gplx/privacy.html">Chính sách quyền riêng tư</a></p>
+  </div>
+</div>
+
 <h2 id="ho-tro">Liên hệ</h2>
 <div class="card">
   <p>Email: <a href="mailto:rabbitvy.dev@gmail.com">rabbitvy.dev@gmail.com</a></p>
-  <p>Hỗ trợ, báo lỗi hoặc góp ý về ứng dụng, vui lòng gửi email. Mình sẽ phản hồi sớm nhất có thể.</p>
+  <p>Hỗ trợ, báo lỗi hoặc góp ý về ứng dụng, vui lòng gửi email và ghi rõ tên ứng dụng. Mình sẽ phản hồi sớm nhất có thể.</p>
 </div>
 
 <hr>
 <footer>
-  <p><a href="privacy.html">Chính sách quyền riêng tư</a></p>
-  <p lang="en">Lê Xuân Nhất, mobile app developer. Support: <a href="mailto:rabbitvy.dev@gmail.com">rabbitvy.dev@gmail.com</a> · <a href="privacy.html#en">Privacy Policy</a></p>
+  <p>Chính sách quyền riêng tư: <a href="privacy.html">iLoveBK</a> · <a href="gplx/privacy.html">Ôn thi GPLX</a></p>
+  <p lang="en">Lê Xuân Nhất, mobile app developer (iLoveBK, Ôn thi GPLX). Support: <a href="mailto:rabbitvy.dev@gmail.com">rabbitvy.dev@gmail.com</a> · Privacy Policy: <a href="privacy.html#en">iLoveBK</a>, <a href="gplx/privacy.html#en">Ôn thi GPLX</a></p>
 </footer>
 </main>
 </body>
