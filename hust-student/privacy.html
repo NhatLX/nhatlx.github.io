@@ -65,12 +65,18 @@
 <h2>5. Bảo mật</h2>
 <p>Dữ liệu được truyền tới Firebase và hệ thống của trường qua kết nối mã hoá HTTPS.</p>
 
-<h2>6. Lưu trữ và xoá dữ liệu</h2>
-<ul>
-  <li>Dữ liệu trên điện thoại bị xoá khi bạn đăng xuất, xoá dữ liệu ứng dụng hoặc gỡ ứng dụng.</li>
-  <li>Dữ liệu trên Firebase được lưu trong thời gian cần thiết để cung cấp tính năng tương ứng.</li>
-  <li>Bạn có thể yêu cầu xem, sửa hoặc xoá dữ liệu gắn với MSSV của mình (báo cáo đăng nhập, bình luận) bằng cách gửi email tới địa chỉ ở mục 9. Yêu cầu sẽ được phản hồi trong vòng 30 ngày.</li>
-</ul>
+<h2 id="xoa-du-lieu">6. Lưu trữ và yêu cầu xoá dữ liệu</h2>
+<p>Dữ liệu trên điện thoại bị xoá khi bạn đăng xuất, xoá dữ liệu ứng dụng hoặc gỡ ứng dụng.</p>
+<p>Để yêu cầu xoá dữ liệu của bạn trong ứng dụng HUST Student (nhà phát triển: Lê Xuân Nhất):</p>
+<ol>
+  <li>Gửi email tới <a href="mailto:nhatlexuan.vn@gmail.com?subject=Y%C3%AAu%20c%E1%BA%A7u%20xo%C3%A1%20d%E1%BB%AF%20li%E1%BB%87u%20HUST%20Student">nhatlexuan.vn@gmail.com</a> với tiêu đề &quot;Yêu cầu xoá dữ liệu HUST Student&quot;.</li>
+  <li>Ghi rõ mã số sinh viên của bạn và dữ liệu muốn xoá (hoặc &quot;tất cả&quot;).</li>
+  <li>Bạn sẽ nhận được xác nhận khi dữ liệu đã được xoá, chậm nhất trong vòng 30 ngày.</li>
+</ol>
+<div class="card">
+<p><strong>Dữ liệu được xoá:</strong> báo cáo &quot;Gặp vấn đề khi đăng nhập&quot; (MSSV, email) và các bình luận Review học phần của bạn.</p>
+<p><strong>Dữ liệu được giữ lại:</strong> thông tin thành viên VIP (nếu có) được giữ để duy trì quyền lợi của bạn, trừ khi bạn yêu cầu xoá cả thông tin này. Dữ liệu thống kê, nhật ký sự cố và mã nhận dạng thiết bị trên Firebase không gắn với MSSV nên không thể tìm để xoá theo yêu cầu; chúng được Firebase tự động xoá theo thời hạn lưu giữ (nhật ký sự cố Crashlytics: 90 ngày).</p>
+</div>
 
 <h2>7. Trẻ em</h2>
 <p>Ứng dụng dành cho sinh viên đại học, không nhắm tới trẻ em dưới 13 tuổi và không cố ý thu thập dữ liệu của trẻ em.</p>
@@ -121,12 +127,18 @@
 <h2>5. Security</h2>
 <p>Data is sent to Firebase and to the university&#x27;s system over encrypted HTTPS connections.</p>
 
-<h2>6. Retention and deletion</h2>
-<ul>
-  <li>Data on your phone is removed when you sign out, clear the app&#x27;s data or uninstall the app.</li>
-  <li>Data in Firebase is kept as long as needed to provide the related feature.</li>
-  <li>You can ask to access, correct or delete data linked to your student ID (sign-in reports, comments) by emailing the address in section 9. Requests are answered within 30 days.</li>
-</ul>
+<h2 id="delete-data">6. Retention and data deletion</h2>
+<p>Data on your phone is removed when you sign out, clear the app&#x27;s data or uninstall the app.</p>
+<p>To request deletion of your data in HUST Student (developer: Lê Xuân Nhất):</p>
+<ol>
+  <li>Email <a href="mailto:nhatlexuan.vn@gmail.com?subject=HUST%20Student%20data%20deletion%20request">nhatlexuan.vn@gmail.com</a> with the subject &quot;HUST Student data deletion request&quot;.</li>
+  <li>Include your student ID and which data you want deleted (or &quot;all&quot;).</li>
+  <li>You will receive a confirmation once the data is deleted, within 30 days.</li>
+</ol>
+<div class="card">
+<p><strong>Deleted:</strong> your sign-in problem reports (student ID, email) and your course review comments.</p>
+<p><strong>Kept:</strong> VIP membership records (if any) are kept to preserve your benefits unless you ask for them to be deleted too. Analytics, crash logs and device identifiers in Firebase are not linked to your student ID, so they cannot be looked up for deletion; Firebase deletes them automatically under its retention periods (Crashlytics crash logs: 90 days).</p>
+</div>
 
 <h2>7. Children</h2>
 <p>The app is intended for university students, is not directed at children under 13, and does not knowingly collect data from children.</p>
