@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chính sách quyền riêng tư – HUST Student</title>
+<style>
+  :root { --bg: #ffffff; --fg: #1d1d1f; --muted: #6e6e73; --line: #e5e5ea; --link: #0066cc; --card: #f5f5f7; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111113; --fg: #f2f2f7; --muted: #a1a1a6; --line: #2c2c2e; --link: #4da3ff; --card: #1c1c1e; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.6em; line-height: 1.3; margin: 0 0 4px; }
+  h2 { font-size: 1.15em; margin: 1.8em 0 .4em; }
+  p { margin: .4em 0; }
+  .date, .tagline { color: var(--muted); margin: 0 0 1.5em; }
+  nav { margin-bottom: 2em; }
+  a { color: var(--link); overflow-wrap: anywhere; }
+  .card { background: var(--card); border-radius: 12px; padding: 16px; margin: .8em 0; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 3em 0 1.5em; }
+  ul { padding-left: 1.3em; }
+  footer { color: var(--muted); font-size: .9em; }
+</style>
+</head>
+<body>
+<main>
+<nav><a href="#vi">Tiếng Việt</a> · <a href="#en">English</a> · <a href="../">Trang chủ</a></nav>
+
+<section id="vi" lang="vi">
+<h1>Chính sách quyền riêng tư – HUST Student</h1>
+<p class="date">Cập nhật: 11/10/2026</p>
+<p>HUST Student (com.lexuannhat.huststudent) là ứng dụng giúp sinh viên Đại học Bách khoa Hà Nội xem bảng điểm, thời khoá biểu, lịch thi, học phí và các thông tin học tập khác. Ứng dụng do cá nhân Lê Xuân Nhất phát triển, không phải ứng dụng chính thức của Đại học Bách khoa Hà Nội.</p>
+
+<h2>1. Thông tin đăng nhập và dữ liệu học tập</h2>
+<ul>
+  <li>Để đăng nhập, bạn nhập mã số sinh viên (MSSV), mật khẩu và mã captcha của hệ thống <a href="https://ctt-sis.hust.edu.vn">ctt-sis.hust.edu.vn</a>. Ứng dụng gửi các thông tin này trực tiếp tới hệ thống của trường qua kết nối HTTPS. Mật khẩu của bạn không được gửi tới máy chủ của nhà phát triển.</li>
+  <li>MSSV và mật khẩu được lưu trên điện thoại của bạn để dùng khi bạn bấm &quot;Cập nhật dữ liệu&quot;.</li>
+  <li>Bảng điểm, thời khoá biểu, học phí, điểm TOEIC, danh sách lớp và thông tin sinh viên lấy từ hệ thống của trường chỉ được lưu trên điện thoại của bạn.</li>
+</ul>
+
+<h2>2. Dữ liệu được thu thập</h2>
+<p>Các dữ liệu sau được gửi tới dịch vụ Firebase của Google mà ứng dụng dùng để hoạt động:</p>
+<ul>
+  <li><strong>Mã số sinh viên</strong> – khi mở ứng dụng và khi đăng nhập, để kiểm tra quyền thành viên VIP.</li>
+  <li><strong>Mã số sinh viên và địa chỉ email</strong> – chỉ khi bạn tự gửi báo cáo ở màn &quot;Gặp vấn đề khi đăng nhập&quot;, để liên hệ hỗ trợ bạn. Không bắt buộc.</li>
+  <li><strong>Biệt danh và nội dung bình luận</strong> – chỉ khi bạn viết bình luận ở mục &quot;Review học phần&quot;. Không bắt buộc. Bình luận hiển thị công khai với người dùng khác của ứng dụng, vì vậy vui lòng không đưa thông tin cá nhân vào bình luận.</li>
+  <li><strong>Tương tác với ứng dụng</strong> (màn hình đã mở, sự kiện sử dụng) – qua Firebase Analytics, để thống kê và cải thiện ứng dụng.</li>
+  <li><strong>Nhật ký sự cố và thông tin chẩn đoán</strong> (loại máy, phiên bản Android, hiệu năng) – qua Firebase Crashlytics và Performance Monitoring, để tìm và sửa lỗi.</li>
+  <li><strong>Mã nhận dạng thiết bị</strong> (Firebase Installation ID, mã thông báo FCM) – để gửi thông báo và thống kê.</li>
+</ul>
+
+<h2>3. Những gì ứng dụng không làm</h2>
+<ul>
+  <li>Không có quảng cáo, không dùng mã nhận dạng quảng cáo (Advertising ID).</li>
+  <li>Không bán, cho thuê hay chia sẻ dữ liệu của bạn với bên thứ ba.</li>
+  <li>Không truy cập vị trí, danh bạ, ảnh, camera hay micro.</li>
+</ul>
+
+<h2>4. Dịch vụ bên thứ ba</h2>
+<p>Ứng dụng dùng các dịch vụ Firebase của Google (Realtime Database, Analytics, Crashlytics, Performance Monitoring, Cloud Messaging, In-App Messaging). Google xử lý dữ liệu thay mặt nhà phát triển theo <a href="https://policies.google.com/privacy?hl=vi">Chính sách quyền riêng tư của Google</a> và <a href="https://firebase.google.com/support/privacy">điều khoản quyền riêng tư của Firebase</a>.</p>
+<p>Khi bạn mở trang web của trường (ctt-daotao, ctsv, hust.edu.vn) trong ứng dụng, chính sách quyền riêng tư của các trang đó được áp dụng.</p>
+
+<h2>5. Bảo mật</h2>
+<p>Dữ liệu được truyền tới Firebase và hệ thống của trường qua kết nối mã hoá HTTPS.</p>
+
+<h2>6. Lưu trữ và xoá dữ liệu</h2>
+<ul>
+  <li>Dữ liệu trên điện thoại bị xoá khi bạn đăng xuất, xoá dữ liệu ứng dụng hoặc gỡ ứng dụng.</li>
+  <li>Dữ liệu trên Firebase được lưu trong thời gian cần thiết để cung cấp tính năng tương ứng.</li>
+  <li>Bạn có thể yêu cầu xem, sửa hoặc xoá dữ liệu gắn với MSSV của mình (báo cáo đăng nhập, bình luận) bằng cách gửi email tới địa chỉ ở mục 9. Yêu cầu sẽ được phản hồi trong vòng 30 ngày.</li>
+</ul>
+
+<h2>7. Trẻ em</h2>
+<p>Ứng dụng dành cho sinh viên đại học, không nhắm tới trẻ em dưới 13 tuổi và không cố ý thu thập dữ liệu của trẻ em.</p>
+
+<h2>8. Thay đổi chính sách</h2>
+<p>Nếu chính sách thay đổi, nội dung mới sẽ được đăng trên trang này kèm ngày cập nhật.</p>
+
+<h2>9. Liên hệ</h2>
+<p>Mọi câu hỏi hoặc yêu cầu về dữ liệu, xin gửi email tới <a href="mailto:nhatlexuan.vn@gmail.com">nhatlexuan.vn@gmail.com</a>.</p>
+</section>
+
+<hr>
+
+<section id="en" lang="en">
+<h1>Privacy Policy – HUST Student</h1>
+<p class="date">Last updated: 11/10/2026</p>
+<p>HUST Student (com.lexuannhat.huststudent) helps students of Hanoi University of Science and Technology (HUST) view their grades, timetable, exam schedule, tuition and other study information. It is developed by Lê Xuân Nhất as an individual and is not an official app of HUST.</p>
+
+<h2>1. Sign-in details and study data</h2>
+<ul>
+  <li>To sign in, you enter your student ID, password and the captcha of <a href="https://ctt-sis.hust.edu.vn">ctt-sis.hust.edu.vn</a>. The app sends them directly to the university&#x27;s system over HTTPS. Your password is never sent to the developer&#x27;s servers.</li>
+  <li>Your student ID and password are stored on your phone so the app can refresh your data when you tap &quot;Cập nhật dữ liệu&quot; (Update data).</li>
+  <li>Grades, timetable, tuition, TOEIC scores, class list and student information fetched from the university are stored only on your phone.</li>
+</ul>
+
+<h2>2. Data collected</h2>
+<p>The following data is sent to Google&#x27;s Firebase services, which the app uses to operate:</p>
+<ul>
+  <li><strong>Student ID</strong> – when you open the app and sign in, to check VIP membership.</li>
+  <li><strong>Student ID and email address</strong> – only when you submit a report on the &quot;Gặp vấn đề khi đăng nhập&quot; (sign-in problem) screen, so we can help you. Optional.</li>
+  <li><strong>Nickname and comment text</strong> – only when you post a comment in &quot;Review học phần&quot; (course reviews). Optional. Comments are visible to other users of the app, so please do not include personal information in them.</li>
+  <li><strong>App interactions</strong> (screens opened, usage events) – via Firebase Analytics, for statistics and improving the app.</li>
+  <li><strong>Crash logs and diagnostics</strong> (device model, Android version, performance) – via Firebase Crashlytics and Performance Monitoring, to find and fix bugs.</li>
+  <li><strong>Device identifiers</strong> (Firebase Installation ID, FCM token) – to send notifications and for statistics.</li>
+</ul>
+
+<h2>3. What the app does not do</h2>
+<ul>
+  <li>No ads, and no use of the Advertising ID.</li>
+  <li>No selling, renting or sharing of your data with third parties.</li>
+  <li>No access to your location, contacts, photos, camera or microphone.</li>
+</ul>
+
+<h2>4. Third-party services</h2>
+<p>The app uses Google Firebase (Realtime Database, Analytics, Crashlytics, Performance Monitoring, Cloud Messaging, In-App Messaging). Google processes this data on the developer&#x27;s behalf under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy">Firebase privacy terms</a>.</p>
+<p>When you open university websites (ctt-daotao, ctsv, hust.edu.vn) inside the app, their own privacy policies apply.</p>
+
+<h2>5. Security</h2>
+<p>Data is sent to Firebase and to the university&#x27;s system over encrypted HTTPS connections.</p>
+
+<h2>6. Retention and deletion</h2>
+<ul>
+  <li>Data on your phone is removed when you sign out, clear the app&#x27;s data or uninstall the app.</li>
+  <li>Data in Firebase is kept as long as needed to provide the related feature.</li>
+  <li>You can ask to access, correct or delete data linked to your student ID (sign-in reports, comments) by emailing the address in section 9. Requests are answered within 30 days.</li>
+</ul>
+
+<h2>7. Children</h2>
+<p>The app is intended for university students, is not directed at children under 13, and does not knowingly collect data from children.</p>
+
+<h2>8. Changes</h2>
+<p>If this policy changes, the new version will be published on this page with its date.</p>
+
+<h2>9. Contact</h2>
+<p>For any question or data request, please email <a href="mailto:nhatlexuan.vn@gmail.com">nhatlexuan.vn@gmail.com</a>.</p>
+</section>
+</main>
+</body>
+</html>
