@@ -13,6 +13,8 @@
   :root { --accent: #C7324D; --accent-dark: #9E2238; --ink: #1F1A1C; --body: #3C3438; --muted: #5E5559;
           --bg: #FFF8F5; --line: #F0DCD6; --tint: #FFE3E3; }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  .card { scroll-margin-top: 24px; }
   body { margin: 0; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: var(--ink); background: var(--bg); }
   a { color: inherit; text-decoration: none; }
   a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
@@ -37,6 +39,9 @@
   .hero-art { flex: 1 1 360px; min-width: 0; display: flex; justify-content: center; }
   .tiles { width: 100%; max-width: 420px; aspect-ratio: 1/1; border-radius: 48px; background: var(--accent);
            display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: center; gap: 20px; padding: 36px; }
+  .tiles a { display: block; border-radius: 28px; transition: transform .2s; }
+  .tiles a:hover { transform: scale(1.05); }
+  .tiles a:focus-visible { outline-color: #fff; }
   .tiles img { width: 100%; aspect-ratio: 1/1; border-radius: 28px; object-fit: cover; display: block; }
 
   #apps { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -107,10 +112,10 @@
     </div>
     <div class="hero-art">
       <div class="tiles">
-        <img src="images/ilovebk.png" alt="">
-        <img src="images/gplx.png" alt="">
-        <img src="images/ilovemoney.png" alt="">
-        <img src="images/ilovebaby.png" alt="">
+        <a href="#ilovebk" aria-label="Xem iLoveBK"><img src="images/ilovebk.png" alt=""></a>
+        <a href="#gplx" aria-label="Xem iLoveGPLX"><img src="images/gplx.png" alt=""></a>
+        <a href="#ilovemoney" aria-label="Xem iLoveMoney"><img src="images/ilovemoney.png" alt=""></a>
+        <a href="#ilovebaby" aria-label="Xem iLoveBaby"><img src="images/ilovebaby.png" alt=""></a>
       </div>
     </div>
   </div>
@@ -177,7 +182,12 @@
           <li>Ví tiền mặt, ngân hàng, ví điện tử; ngân sách; khoản định kỳ; báo cáo</li>
           <li>Dùng không cần tài khoản, hoặc đăng nhập để đồng bộ giữa các máy</li>
         </ul>
-        <span class="soon">Sắp ra mắt</span>
+        <div class="stores">
+          <a class="store" id="ilovemoney-android" href="https://play.google.com/store/apps/details?id=com.nhatlx.ilovemoney" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>
+            Google Play
+          </a>
+        </div>
       </article>
 
       <article class="card" id="ilovebaby">
