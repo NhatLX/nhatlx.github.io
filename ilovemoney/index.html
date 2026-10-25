@@ -58,6 +58,8 @@
 
   .strip { display: flex; gap: 18px; overflow-x: auto; padding: 4px 20px 24px; scroll-snap-type: x mandatory; }
   .strip img { width: 230px; flex: none; border-radius: 26px; scroll-snap-align: start; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+  .strip img:first-child { margin-left: auto; }
+  .strip img:last-child { margin-right: auto; }
   .dark { background: var(--g9); }
 
   .safe { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 24px; list-style: none; }
