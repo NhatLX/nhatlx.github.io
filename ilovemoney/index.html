@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iLoveMoney – Sổ thu chi nhanh bằng 1 câu</title>
+<meta name="description" content="Gõ &quot;phở 45k&quot; là xong một khoản chi. Biết ngay mỗi ngày còn được tiêu bao nhiêu, quét bill chuyển khoản, ví chung cả nhà, sổ hiếu hỷ, quỹ Tết.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iLoveMoney – Sổ thu chi nhanh bằng 1 câu">
+<meta property="og:description" content="Gõ &quot;phở 45k&quot; là xong một khoản chi. Biết ngay mỗi ngày còn được tiêu bao nhiêu.">
+<meta property="og:image" content="https://nhatlx.github.io/ilovemoney/img/og.png">
+<meta property="og:url" content="https://nhatlx.github.io/ilovemoney/">
+<meta name="theme-color" content="#0d3b2e">
+<link rel="icon" href="img/icon.png">
+<style>
+  :root { --g9:#072a20; --g8:#0d3b2e; --g6:#12644a; --g4:#3daa7d; --gold:#f6c544; --gold-soft:#ffe7a3; --cream:#f4f6f3; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font: 17px/1.6 "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         color: #fff; background: var(--g8); }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  .hero { background:
+      radial-gradient(600px 500px at 90% 0%, rgba(246,197,68,.28), transparent 60%),
+      radial-gradient(700px 600px at 0% 100%, rgba(61,170,125,.35), transparent 60%),
+      linear-gradient(165deg, var(--g6) 0%, var(--g8) 50%, var(--g9) 100%);
+    padding: 28px 0 72px; overflow: hidden; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 22px; }
+  .brand img { width: 44px; height: 44px; border-radius: 11px; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; margin-top: 48px; }
+  h1 { font-size: clamp(36px, 6vw, 62px); line-height: 1.08; letter-spacing: -.02em; font-weight: 800; }
+  h1 em { font-style: normal; color: var(--gold); }
+  .lead { margin-top: 18px; font-size: 20px; color: var(--gold-soft); max-width: 30em; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn { display: inline-flex; flex-direction: column; justify-content: center; min-width: 190px; padding: 12px 22px;
+         border-radius: 14px; text-decoration: none; background: var(--gold); color: var(--g9); font-weight: 800; font-size: 18px; line-height: 1.25; }
+  .btn small { font-weight: 600; font-size: 12.5px; opacity: .8; }
+  .btn.alt { background: rgba(255,255,255,.14); color: #fff; }
+  .btn.soon { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); pointer-events: none; }
+  .btn:hover { filter: brightness(1.06); }
+  .note { margin-top: 14px; font-size: 14px; color: rgba(255,255,255,.7); }
+  .shot { justify-self: center; width: min(300px, 70vw); border-radius: 40px; border: 9px solid #0a0f0d; background: #0a0f0d;
+          overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,.5); transform: rotate(3deg); }
+  .shot img { display: block; width: 100%; }
+
+  section { padding: 64px 0; }
+  .light { background: var(--cream); color: var(--g8); }
+  h2 { font-size: clamp(26px, 4vw, 38px); line-height: 1.2; letter-spacing: -.01em; margin-bottom: 8px; }
+  .sub { color: #5b6b63; margin-bottom: 32px; }
+  .feats { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .feat { background: #fff; border-radius: 18px; padding: 22px; box-shadow: 0 2px 12px rgba(13,59,46,.07); }
+  .feat .ic { font-size: 30px; }
+  .feat h3 { font-size: 18px; margin: 8px 0 4px; }
+  .feat p { font-size: 15.5px; color: #4d5d55; }
+  .feat.top { background: var(--g8); color: #fff; }
+  .feat.top p { color: var(--gold-soft); }
+
+  .strip { display: flex; gap: 18px; overflow-x: auto; padding: 4px 20px 24px; scroll-snap-type: x mandatory; }
+  .strip img { width: 230px; flex: none; border-radius: 26px; scroll-snap-align: start; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+  .dark { background: var(--g9); }
+
+  .safe { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 24px; list-style: none; }
+  .safe li::before { content: "✓ "; color: var(--gold); font-weight: 800; }
+
+  .cta { text-align: center; background: linear-gradient(165deg, var(--g6), var(--g8)); }
+  .cta .stores { justify-content: center; }
+  footer { background: var(--g9); padding: 28px 0; font-size: 14px; color: rgba(255,255,255,.65); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+  footer a { text-decoration: none; margin-right: 16px; }
+
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .shot { transform: none; }
+    .btn { flex: 1 1 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><img src="img/icon.png" alt="">iLoveMoney</div>
+    <div class="hero-grid">
+      <div>
+        <h1>Gõ <em>"phở 45k"</em><br>là xong một khoản chi.</h1>
+        <p class="lead">Sổ thu chi cho người Việt. Nhìn một con số là biết hôm nay còn được tiêu bao nhiêu.</p>
+        <div class="stores js-stores"></div>
+        <p class="note">Dùng thử ngay, không cần tài khoản. Gói miễn phí đủ dùng cho cá nhân.</p>
+      </div>
+      <div class="shot"><img src="img/01_home.png" alt="Màn hình chính iLoveMoney"></div>
+    </div>
+  </div>
+</header>
+
+<section class="light">
+  <div class="wrap">
+    <h2>Mọi thứ bạn cần để quản lý tiền</h2>
+    <p class="sub">Từ ghi nhanh mỗi ngày đến những khoản rất "Việt Nam" như hiếu hỷ, quỹ Tết, vàng.</p>
+    <div class="feats">
+      <div class="feat top"><div class="ic">⚡</div><h3>Nhập bằng 1 câu</h3><p>Gõ "đổ xăng 80k hôm qua" hay "lương 15tr", app tự hiểu số tiền, danh mục và ngày.</p></div>
+      <div class="feat top"><div class="ic">💰</div><h3>Mỗi ngày còn được tiêu</h3><p>Một con số duy nhất, đổi màu khi sắp vượt để bạn điều chỉnh kịp.</p></div>
+      <div class="feat top"><div class="ic">📸</div><h3>Quét bill chuyển khoản</h3><p>Chụp màn hình app ngân hàng, tự điền số tiền, thời gian, nội dung. Đọc ngay trên máy, ảnh không gửi đi đâu.</p></div>
+      <div class="feat top"><div class="ic">👨‍👩‍👧</div><h3>Ví chung cả nhà</h3><p>Cả nhà cùng ghi một sổ, phân quyền rõ ràng. Sổ cá nhân của mỗi người vẫn riêng tư.</p></div>
+      <div class="feat"><div class="ic">🧧</div><h3>Sổ hiếu hỷ</h3><p>Nhớ ai mừng mình bao nhiêu để đáp lễ cho phải đạo.</p></div>
+      <div class="feat"><div class="ic">🎆</div><h3>Quỹ Tết và mục tiêu</h3><p>Tính sẵn mỗi tháng cần để dành bao nhiêu.</p></div>
+      <div class="feat"><div class="ic">🪙</div><h3>Quản lý vàng</h3><p>Theo chỉ, lượng; xem lãi lỗ theo giá mua vào.</p></div>
+      <div class="feat"><div class="ic">🍜</div><h3>Chia tiền nhóm</h3><p>Chia bữa ăn, tạo mã VietQR để bạn bè quét chuyển khoản.</p></div>
+      <div class="feat"><div class="ic">📒</div><h3>Sổ nợ</h3><p>Ai nợ ai, hạn trả, nhắc nợ.</p></div>
+      <div class="feat"><div class="ic">⏳</div><h3>Hàng chờ 48 giờ</h3><p>Muốn mua gì để chờ, hết giờ vẫn muốn mới mua.</p></div>
+      <div class="feat"><div class="ic">📊</div><h3>Ngân sách và báo cáo</h3><p>Ngân sách theo danh mục, kỳ tính theo ngày nhận lương, khoản định kỳ tự nhắc.</p></div>
+      <div class="feat"><div class="ic">🏠</div><h3>Widget và phím tắt</h3><p>Ghi chi tiêu không cần mở app.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap"><h2>Xem app</h2><p class="sub" style="color:var(--gold-soft)">Vuốt ngang để xem thêm.</p></div>
+  <div class="strip">
+    <img src="img/02_entry.png" alt="Nhập chi tiêu bằng 1 câu" loading="lazy">
+    <img src="img/03_gifts.png" alt="Sổ hiếu hỷ" loading="lazy">
+    <img src="img/04_tet.png" alt="Quỹ Tết" loading="lazy">
+    <img src="img/05_gold.png" alt="Quản lý vàng" loading="lazy">
+    <img src="img/06_split.png" alt="Chia tiền nhóm" loading="lazy">
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <h2>An toàn và riêng tư</h2>
+    <p class="sub">Tiền bạc là chuyện nhạy cảm, nên iLoveMoney làm rõ ràng.</p>
+    <ul class="safe">
+      <li>Dùng thử không cần tài khoản, dữ liệu ở trên máy</li>
+      <li>Khoá app bằng vân tay / khuôn mặt, ẩn số dư</li>
+      <li>Không kết nối tài khoản ngân hàng</li>
+      <li>Không bán dữ liệu của bạn</li>
+      <li>Xuất CSV bất cứ lúc nào</li>
+      <li>Xoá tài khoản ngay trong app</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Bắt đầu ghi chi tiêu trong 10 giây</h2>
+    <p class="lead" style="margin:8px auto 0">Tải iLoveMoney miễn phí.</p>
+    <div class="stores js-stores"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><a href="privacy.html">Chính sách quyền riêng tư</a><a href="terms.html">Điều khoản sử dụng</a><a href="mailto:rabbitvy.dev@gmail.com">Liên hệ</a></div>
+    <div>© 2026 Lê Xuân Nhất</div>
+  </div>
+</footer>
+
+<script>
+  // Điền link cửa hàng khi app đã lên store. Để trống thì nút hiện "Sắp ra mắt".
+  var LINKS = {
+    ios: "",     // https://apps.apple.com/vn/app/.../id...
+    android: ""  // https://play.google.com/store/apps/details?id=com.nhatlx.ilovemoney
+  };
+
+  var ua = navigator.userAgent || "";
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(ua);
+
+  var stores = [
+    { key: "ios", top: "Tải trên", name: "App Store" },
+    { key: "android", top: "Tải trên", name: "Google Play" }
+  ];
+  // Máy nào thì nút của hệ điều hành đó đứng trước và nổi bật.
+  if (isAndroid) stores.reverse();
+  var primary = isAndroid ? "android" : "ios";
+
+  function build(box) {
+    stores.forEach(function (s) {
+      var url = LINKS[s.key];
+      var a = document.createElement(url ? "a" : "span");
+      a.className = "btn" + (url ? (s.key === primary ? "" : " alt") : " soon");
+      if (url) { a.href = url; a.rel = "noopener"; }
+      a.innerHTML = "<small>" + (url ? s.top : "Sắp ra mắt trên") + "</small>" + s.name;
+      box.appendChild(a);
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".js-stores"), build);
+</script>
+</body>
+</html>
