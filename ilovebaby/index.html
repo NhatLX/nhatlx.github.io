@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iLoveBaby – Sổ tay mang thai và chăm bé</title>
+<meta name="description" content="Theo dõi thai kỳ từng tuần, lịch khám thai, đếm cử động thai, bấm cơn gò; sau sinh ghi bú, ngủ, tã, tăng trưởng chuẩn WHO, kho sữa mẹ và lịch tiêm chủng. Dữ liệu lưu trên máy của mẹ.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iLoveBaby – Sổ tay mang thai và chăm bé">
+<meta property="og:description" content="Mỗi tuần bên bé, thêm một niềm vui. Từ que thử hai vạch đến ngày gặp con và những năm đầu đời.">
+<meta property="og:image" content="https://nhatlx.github.io/ilovebaby/img/og.jpg">
+<meta property="og:url" content="https://nhatlx.github.io/ilovebaby/">
+<meta name="theme-color" content="#7b1f40">
+<link rel="icon" href="img/icon.png">
+<style>
+  :root { --g9:#3d0d20; --g8:#5a1530; --g6:#7b1f40; --g4:#c2507a; --gold:#f7b6c6; --gold-soft:#fde4ea; --cream:#fff7f8; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font: 17px/1.6 "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         color: #fff; background: var(--g8); }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  .hero { background:
+      radial-gradient(600px 500px at 90% 0%, rgba(247,182,198,.30), transparent 60%),
+      radial-gradient(700px 600px at 0% 100%, rgba(194,80,122,.35), transparent 60%),
+      linear-gradient(165deg, var(--g6) 0%, var(--g8) 50%, var(--g9) 100%);
+    padding: 28px 0 72px; overflow: hidden; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 22px; }
+  .brand img { width: 44px; height: 44px; border-radius: 11px; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; margin-top: 48px; }
+  h1 { font-size: clamp(36px, 6vw, 62px); line-height: 1.08; letter-spacing: -.02em; font-weight: 800; }
+  h1 em { font-style: normal; color: var(--gold); }
+  .lead { margin-top: 18px; font-size: 20px; color: var(--gold-soft); max-width: 30em; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn { display: inline-flex; flex-direction: column; justify-content: center; min-width: 190px; padding: 12px 22px;
+         border-radius: 14px; text-decoration: none; background: var(--gold); color: var(--g9); font-weight: 800; font-size: 18px; line-height: 1.25; }
+  .btn small { font-weight: 600; font-size: 12.5px; opacity: .8; }
+  .btn.alt { background: rgba(255,255,255,.14); color: #fff; }
+  .btn.soon { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); pointer-events: none; }
+  .btn:hover { filter: brightness(1.06); }
+  .note { margin-top: 14px; font-size: 14px; color: rgba(255,255,255,.7); }
+  .shot { justify-self: center; width: min(300px, 70vw); border-radius: 40px; border: 9px solid #160a10; background: #160a10;
+          overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,.5); transform: rotate(3deg); }
+  .shot img { display: block; width: 100%; }
+
+  section { padding: 64px 0; }
+  .light { background: var(--cream); color: var(--g8); }
+  h2 { font-size: clamp(26px, 4vw, 38px); line-height: 1.2; letter-spacing: -.01em; margin-bottom: 8px; }
+  .sub { color: #6e5a63; margin-bottom: 32px; }
+  .feats { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .feat { background: #fff; border-radius: 18px; padding: 22px; box-shadow: 0 2px 12px rgba(123,31,64,.08); }
+  .feat .ic { font-size: 30px; }
+  .feat h3 { font-size: 18px; margin: 8px 0 4px; }
+  .feat p { font-size: 15.5px; color: #5e4a54; }
+  .feat.top { background: var(--g8); color: #fff; }
+  .feat.top p { color: var(--gold-soft); }
+
+  .carousel { --vis: 3; --gap: 18px; position: relative; overflow: hidden; touch-action: pan-y; }
+  .track { display: flex; gap: var(--gap); transition: transform .7s cubic-bezier(.22,.8,.28,1); will-change: transform; }
+  .track img { flex: 0 0 calc((100% - (var(--vis) - 1) * var(--gap)) / var(--vis)); width: 0; min-width: 0; height: auto; border-radius: 26px;
+               box-shadow: 0 10px 30px rgba(0,0,0,.35); user-select: none; -webkit-user-drag: none; }
+  .dots { display: flex; justify-content: center; gap: 8px; margin-top: 22px; }
+  .dots button { width: 10px; height: 10px; border: 0; border-radius: 99px; background: rgba(255,255,255,.3); cursor: pointer; padding: 0; transition: all .3s; }
+  .dots button.on { width: 28px; background: var(--gold); }
+  @media (max-width: 900px) { .carousel { --vis: 2; } }
+  @media (max-width: 560px) { .carousel { --vis: 1.25; } }
+  .dark { background: var(--g9); }
+
+  .safe { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 24px; list-style: none; }
+  .safe li::before { content: "✓ "; color: var(--gold); font-weight: 800; }
+
+  .cta { text-align: center; background: linear-gradient(165deg, var(--g6), var(--g8)); }
+  .cta .stores { justify-content: center; }
+  footer { background: var(--g9); padding: 28px 0; font-size: 14px; color: rgba(255,255,255,.65); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+  footer a { text-decoration: none; margin-right: 16px; }
+
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .shot { transform: none; }
+    .btn { flex: 1 1 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><img src="img/icon.png" alt="">iLoveBaby</div>
+    <div class="hero-grid">
+      <div>
+        <h1>Mỗi tuần bên bé,<br><em>thêm một niềm vui.</em></h1>
+        <p class="lead">Sổ tay mang thai và chăm bé cho mẹ Việt: từ que thử hai vạch đến ngày gặp con và những năm đầu đời của bé.</p>
+        <div class="stores js-stores"></div>
+        <p class="note">Miễn phí, không quảng cáo. Dùng không cần tài khoản, dữ liệu lưu trên máy của mẹ.</p>
+      </div>
+      <div class="shot"><img src="img/01_home.jpg" alt="Màn hình chính iLoveBaby"></div>
+    </div>
+  </div>
+</header>
+
+<section class="light">
+  <div class="wrap">
+    <h2>Đồng hành cùng mẹ suốt hành trình</h2>
+    <p class="sub">Theo lịch khám, lịch tiêm và thói quen của Việt Nam.</p>
+    <div class="feats">
+      <div class="feat top"><div class="ic">🤰</div><h3>Bé tuần này</h3><p>Tuần thai, ngày dự sinh và kích thước bé so với trái cây Việt: hạt tiêu, quả chanh, quả xoài…</p></div>
+      <div class="feat top"><div class="ic">📅</div><h3>Lịch khám thai</h3><p>Các mốc khám tự tính theo ngày dự sinh, nhắc trước 3 ngày và sáng hôm khám.</p></div>
+      <div class="feat top"><div class="ic">🍼</div><h3>Ghi chép một chạm</h3><p>Bú mẹ, bú bình, ngủ, thay tã; gợi ý bên bú, giờ cho ngủ và cữ bú tiếp theo. Có chế độ ban đêm.</p></div>
+      <div class="feat top"><div class="ic">📈</div><h3>Tăng trưởng chuẩn WHO</h3><p>Cân nặng và chiều cao của bé trên biểu đồ WHO từ 0 đến 60 tháng.</p></div>
+      <div class="feat"><div class="ic">👣</div><h3>Đếm cử động thai</h3><p>Bấm mỗi lần bé đạp theo cách "10 lần trong 2 giờ", cảnh báo khi bé đạp ít.</p></div>
+      <div class="feat"><div class="ic">⏱️</div><h3>Bấm cơn gò</h3><p>Tính thời lượng, khoảng cách và nhắc vào viện theo quy tắc 5-1-1.</p></div>
+      <div class="feat"><div class="ic">🥗</div><h3>Bầu ăn được không?</h3><p>Tra nhanh các món Việt: nên ăn, ăn vừa phải hay nên tránh, kèm lý do.</p></div>
+      <div class="feat"><div class="ic">📒</div><h3>Sổ khám thai</h3><p>Cân nặng, huyết áp, chỉ số siêu âm và ảnh phiếu khám của từng lần.</p></div>
+      <div class="feat"><div class="ic">💧</div><h3>Kho sữa mẹ</h3><p>Lịch hút, túi sữa theo nơi trữ, cảnh báo túi sắp hết hạn, kho đủ mấy cữ.</p></div>
+      <div class="feat"><div class="ic">💉</div><h3>Lịch tiêm chủng</h3><p>Tiêm chủng mở rộng và tiêm dịch vụ theo ngày sinh của bé, nhắc tối hôm trước.</p></div>
+      <div class="feat"><div class="ic">🧸</div><h3>Cột mốc và ăn dặm</h3><p>Cột mốc phát triển đến 36 tháng, nhật ký món ăn dặm và phản ứng.</p></div>
+      <div class="feat"><div class="ic">📸</div><h3>Hành trình</h3><p>Album khoảnh khắc, tự thêm ngày chào đời, đầy tháng và thôi nôi theo âm lịch.</p></div>
+      <div class="feat"><div class="ic">👨‍👩‍👧</div><h3>Nhiều bé, song thai</h3><p>Theo dõi cùng lúc bé đang trong bụng và bé đã chào đời, mỗi bé một màu.</p></div>
+      <div class="feat"><div class="ic">🧳</div><h3>Đồ đi sinh và thai sản</h3><p>Checklist đồ đi sinh, ước tính tiền thai sản BHXH và hồ sơ cần nộp.</p></div>
+      <div class="feat"><div class="ic">🚨</div><h3>Dấu hiệu nguy hiểm</h3><p>Những dấu hiệu cần đi viện ngay và nút gọi 115.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <h2>Xem app</h2>
+    <p class="sub" style="color:var(--gold-soft)">Một vài màn hình trong iLoveBaby.</p>
+    <div class="carousel" id="car" aria-roledescription="carousel">
+      <div class="track" id="track">
+      <img src="img/store_01.jpg" alt="Trang chủ: bé tuần này" loading="lazy" draggable="false">
+      <img src="img/store_02.jpg" alt="Lịch khám thai" loading="lazy" draggable="false">
+      <img src="img/store_03.jpg" alt="Đếm cử động thai" loading="lazy" draggable="false">
+      <img src="img/store_04.jpg" alt="Bầu ăn được không?" loading="lazy" draggable="false">
+      <img src="img/store_05.jpg" alt="Ghi chép sau sinh" loading="lazy" draggable="false">
+      <img src="img/store_06.jpg" alt="Tăng trưởng" loading="lazy" draggable="false">
+      <img src="img/store_07.jpg" alt="Kho sữa mẹ" loading="lazy" draggable="false">
+      <img src="img/store_08.jpg" alt="Tiêm chủng" loading="lazy" draggable="false">
+      <img src="img/store_09.jpg" alt="Sổ khám thai" loading="lazy" draggable="false">
+      <img src="img/store_10.jpg" alt="Dữ liệu ở lại trên máy mẹ" loading="lazy" draggable="false">
+      </div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <h2>Dữ liệu của mẹ ở lại trên máy mẹ</h2>
+    <p class="sub">Sức khoẻ của mẹ và bé là chuyện riêng tư. iLoveBaby là công cụ theo dõi, không thay thế bác sĩ.</p>
+    <ul class="safe">
+      <li>Dùng không cần tài khoản, dữ liệu lưu trên máy</li>
+      <li>Không thu thập, không chia sẻ dữ liệu</li>
+      <li>Khoá app bằng Face ID, vân tay hoặc mã máy</li>
+      <li>Sao lưu ra file .zip, có thể đặt mật khẩu</li>
+      <li>Chuyển máy giữa iPhone và Android</li>
+      <li>Miễn phí, không quảng cáo</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Bắt đầu hành trình cùng bé</h2>
+    <p class="lead" style="margin:8px auto 0">Tải iLoveBaby miễn phí.</p>
+    <div class="stores js-stores"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><a href="privacy.html">Chính sách quyền riêng tư</a><a href="terms.html">Điều khoản sử dụng</a><a href="mailto:rabbitvy.dev@gmail.com">Liên hệ</a></div>
+    <div>© 2026 Lê Xuân Nhất</div>
+  </div>
+</footer>
+
+<script>
+  // Điền link cửa hàng khi app đã lên store. Để trống thì nút hiện "Sắp ra mắt".
+  var LINKS = {
+    ios: "",     // https://apps.apple.com/vn/app/.../id...
+    android: ""  // https://play.google.com/store/apps/details?id=com.nhatlx.ilovebaby
+  };
+
+  var ua = navigator.userAgent || "";
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(ua);
+
+  var stores = [
+    { key: "ios", top: "Tải trên", name: "App Store" },
+    { key: "android", top: "Tải trên", name: "Google Play" }
+  ];
+  // Máy nào thì nút của hệ điều hành đó đứng trước và nổi bật.
+  if (isAndroid) stores.reverse();
+  var primary = isAndroid ? "android" : "ios";
+
+  function build(box) {
+    stores.forEach(function (s) {
+      var url = LINKS[s.key];
+      var a = document.createElement(url ? "a" : "span");
+      a.className = "btn" + (url ? (s.key === primary ? "" : " alt") : " soon");
+      if (url) { a.href = url; a.rel = "noopener"; }
+      a.innerHTML = "<small>" + (url ? s.top : "Sắp ra mắt trên") + "</small>" + s.name;
+      box.appendChild(a);
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".js-stores"), build);
+
+  // Dải ảnh tự chạy: trượt từng ảnh, hết thì quay về đầu; rê chuột / chạm thì tạm dừng.
+  (function () {
+    var car = document.getElementById("car"), track = document.getElementById("track"), dotsBox = document.getElementById("dots");
+    var n = track.children.length, i = 0, timer = null, held = false;
+    function vis() { return parseFloat(getComputedStyle(car).getPropertyValue("--vis")) || 1; }
+    function last() { return Math.max(0, Math.ceil(n - vis())); }
+    function render() {
+      var step = track.children[0].getBoundingClientRect().width + parseFloat(getComputedStyle(car).getPropertyValue("--gap"));
+      var maxShift = track.scrollWidth - car.clientWidth;
+      track.style.transform = "translateX(" + (-Math.min(i * step, maxShift)) + "px)";
+      Array.prototype.forEach.call(dotsBox.children, function (d, k) { d.className = k === i ? "on" : ""; });
+    }
+    function go(k) { var m = last(); i = k > m ? 0 : (k < 0 ? m : k); render(); }
+    function buildDots() {
+      dotsBox.innerHTML = "";
+      for (var k = 0; k <= last(); k++) (function (k) {
+        var b = document.createElement("button"); b.setAttribute("aria-label", "Ảnh " + (k + 1));
+        b.onclick = function () { go(k); restart(); }; dotsBox.appendChild(b);
+      })(k);
+    }
+    function restart() { clearInterval(timer); timer = setInterval(function () { if (!held) go(i + 1); }, 3000); }
+    car.addEventListener("mouseenter", function () { held = true; });
+    car.addEventListener("mouseleave", function () { held = false; });
+    var x0 = null;
+    car.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; held = true; }, { passive: true });
+    car.addEventListener("touchend", function (e) {
+      if (x0 !== null) { var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { go(i + (dx < 0 ? 1 : -1)); restart(); } }
+      x0 = null; held = false;
+    });
+    window.addEventListener("resize", function () { buildDots(); go(Math.min(i, last())); });
+    window.addEventListener("load", function () { buildDots(); go(0); restart(); });
+  })();
+</script>
+</body>
+</html>
