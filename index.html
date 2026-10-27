@@ -56,6 +56,9 @@
   .card-head div { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
   h3 { margin: 0; font-size: 22px; letter-spacing: -0.02em; font-weight: 700; }
   .tag { font-size: 14px; color: var(--muted); }
+  .detail { margin-left: auto; flex: none; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 999px; background: var(--tint); color: var(--accent-dark); transition: background .2s, color .2s; }
+  .detail:hover { background: var(--accent); color: #fff; }
   .desc { margin: 0; font-size: 16px; line-height: 1.65; color: var(--body); font-weight: 600; }
   .card ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.55; color: var(--body); flex: 1; }
   .stores { display: flex; flex-wrap: nowrap; gap: 10px; }
@@ -173,6 +176,9 @@
         <div class="card-head">
           <img src="images/ilovemoney.png" alt="Biểu tượng iLoveMoney">
           <div><h3>iLoveMoney</h3><span class="tag">Quản lý chi tiêu</span></div>
+          <a class="detail" href="ilovemoney/" aria-label="Xem chi tiết iLoveMoney">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </div>
         <p class="desc">Ghi chi tiêu cực nhanh, hợp thói quen người Việt.</p>
         <ul>
