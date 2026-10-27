@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iLoveGPLX – Ôn thi lý thuyết lái xe 600 câu</title>
+<meta name="description" content="Ôn thi lý thuyết giấy phép lái xe theo bộ 600 câu hỏi mới: ôn theo hạng, câu điểm liệt, thi thử có đồng hồ, bộ đề cố định, tra cứu biển báo QCVN 41:2024 và mẹo thi.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iLoveGPLX – Ôn thi lý thuyết lái xe 600 câu">
+<meta property="og:description" content="Ôn theo hạng, thi thử như thật, tra biển báo và mẹo thi. Không cần mạng, không cần tài khoản.">
+<meta property="og:image" content="https://nhatlx.github.io/gplx/img/og.jpg">
+<meta property="og:url" content="https://nhatlx.github.io/gplx/">
+<meta name="theme-color" content="#1b2a6b">
+<link rel="icon" href="img/icon.png">
+<style>
+  :root { --g9:#0f1a45; --g8:#1b2a6b; --g6:#1565c0; --g4:#42a5f5; --gold:#ffd54f; --gold-soft:#fff1bf; --cream:#f3f5fa; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font: 17px/1.6 "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         color: #fff; background: var(--g8); }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  .hero { background:
+      radial-gradient(600px 500px at 90% 0%, rgba(255,213,79,.24), transparent 60%),
+      radial-gradient(700px 600px at 0% 100%, rgba(66,165,245,.35), transparent 60%),
+      linear-gradient(165deg, var(--g6) 0%, var(--g8) 50%, var(--g9) 100%);
+    padding: 28px 0 72px; overflow: hidden; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 22px; }
+  .brand img { width: 44px; height: 44px; border-radius: 11px; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; margin-top: 48px; }
+  h1 { font-size: clamp(36px, 6vw, 62px); line-height: 1.08; letter-spacing: -.02em; font-weight: 800; }
+  h1 em { font-style: normal; color: var(--gold); }
+  .lead { margin-top: 18px; font-size: 20px; color: var(--gold-soft); max-width: 30em; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn { display: inline-flex; flex-direction: column; justify-content: center; min-width: 190px; padding: 12px 22px;
+         border-radius: 14px; text-decoration: none; background: var(--gold); color: var(--g9); font-weight: 800; font-size: 18px; line-height: 1.25; }
+  .btn small { font-weight: 600; font-size: 12.5px; opacity: .8; }
+  .btn.alt { background: rgba(255,255,255,.14); color: #fff; }
+  .btn.soon { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); pointer-events: none; }
+  .btn:hover { filter: brightness(1.06); }
+  .note { margin-top: 14px; font-size: 14px; color: rgba(255,255,255,.7); }
+  .shot { justify-self: center; width: min(300px, 70vw); border-radius: 40px; border: 9px solid #0b0e18; background: #0b0e18;
+          overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,.5); transform: rotate(3deg); }
+  .shot img { display: block; width: 100%; }
+
+  section { padding: 64px 0; }
+  .light { background: var(--cream); color: var(--g8); }
+  h2 { font-size: clamp(26px, 4vw, 38px); line-height: 1.2; letter-spacing: -.01em; margin-bottom: 8px; }
+  .sub { color: #5a6380; margin-bottom: 32px; }
+  .feats { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .feat { background: #fff; border-radius: 18px; padding: 22px; box-shadow: 0 2px 12px rgba(27,42,107,.08); }
+  .feat .ic { font-size: 30px; }
+  .feat h3 { font-size: 18px; margin: 8px 0 4px; }
+  .feat p { font-size: 15.5px; color: #4b5470; }
+  .feat.top { background: var(--g8); color: #fff; }
+  .feat.top p { color: var(--gold-soft); }
+
+  .carousel { --vis: 3; --gap: 18px; position: relative; overflow: hidden; touch-action: pan-y; }
+  .track { display: flex; gap: var(--gap); transition: transform .7s cubic-bezier(.22,.8,.28,1); will-change: transform; }
+  .track img { flex: 0 0 calc((100% - (var(--vis) - 1) * var(--gap)) / var(--vis)); width: 0; min-width: 0; height: auto; border-radius: 26px;
+               box-shadow: 0 10px 30px rgba(0,0,0,.35); user-select: none; -webkit-user-drag: none; }
+  .dots { display: flex; justify-content: center; gap: 8px; margin-top: 22px; }
+  .dots button { width: 10px; height: 10px; border: 0; border-radius: 99px; background: rgba(255,255,255,.3); cursor: pointer; padding: 0; transition: all .3s; }
+  .dots button.on { width: 28px; background: var(--gold); }
+  @media (max-width: 900px) { .carousel { --vis: 2; } }
+  @media (max-width: 560px) { .carousel { --vis: 1.25; } }
+  .dark { background: var(--g9); }
+
+  .safe { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 24px; list-style: none; }
+  .safe li::before { content: "✓ "; color: var(--gold); font-weight: 800; }
+
+  .cta { text-align: center; background: linear-gradient(165deg, var(--g6), var(--g8)); }
+  .cta .stores { justify-content: center; }
+  footer { background: var(--g9); padding: 28px 0; font-size: 14px; color: rgba(255,255,255,.65); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+  footer a { text-decoration: none; margin-right: 16px; }
+
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .shot { transform: none; }
+    .btn { flex: 1 1 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><img src="img/icon.png" alt="">iLoveGPLX</div>
+    <div class="hero-grid">
+      <div>
+        <h1>Ôn đúng <em>600 câu mới</em>,<br>tự tin thi lý thuyết.</h1>
+        <p class="lead">Ôn thi lý thuyết giấy phép lái xe theo bộ câu hỏi của Cục CSGT áp dụng từ 01/6/2025, đủ các hạng từ A1 đến CE.</p>
+        <div class="stores js-stores"></div>
+        <p class="note">Miễn phí, dùng không cần mạng, không cần tài khoản.</p>
+      </div>
+      <div class="shot"><img src="img/01_home.jpg" alt="Màn hình chính iLoveGPLX"></div>
+    </div>
+  </div>
+</header>
+
+<section class="light">
+  <div class="wrap">
+    <h2>Mọi thứ cần cho phần thi lý thuyết</h2>
+    <p class="sub">Học đúng phần của hạng mình, luyện đề như thật và hiểu vì sao đáp án đúng.</p>
+    <div class="feats">
+      <div class="feat top"><div class="ic">🚗</div><h3>Ôn theo hạng</h3><p>Chỉ học các câu của hạng đang thi: A1, A 250 câu; B1 300 câu; B trở lên 600 câu. Chọn đáp án là biết ngay đúng sai.</p></div>
+      <div class="feat top"><div class="ic">⏱️</div><h3>Thi thử như thật</h3><p>Đúng số câu, thời gian và điểm đạt của từng hạng. Đề ngẫu nhiên hoặc đề cố định, chấm đạt / trượt và xem lại từng câu.</p></div>
+      <div class="feat top"><div class="ic">⚠️</div><h3>Câu điểm liệt</h3><p>Ôn riêng các câu điểm liệt của hạng, sai một câu là trượt nên cần thuộc kỹ.</p></div>
+      <div class="feat top"><div class="ic">📚</div><h3>Bộ đề cố định</h3><p>Làm hết các đề là gặp toàn bộ câu hỏi của hạng. Lưu điểm cao nhất và trạng thái đạt của từng đề.</p></div>
+      <div class="feat"><div class="ic">❌</div><h3>Câu hay sai</h3><p>Tự gom các câu đã trả lời sai để ôn lại cho chắc.</p></div>
+      <div class="feat"><div class="ic">📊</div><h3>Tiến độ học</h3><p>Thanh tiến độ đúng / sai / chưa làm cho cả hạng và từng chương.</p></div>
+      <div class="feat"><div class="ic">🚸</div><h3>Tra cứu biển báo</h3><p>Hình, số hiệu và ý nghĩa nguyên văn theo QCVN 41:2024. Tìm theo tên, gõ có dấu hay không dấu đều được.</p></div>
+      <div class="feat"><div class="ic">💡</div><h3>Mẹo thi</h3><p>Mẹo theo từng dạng câu hỏi; khi xem lại bài thi, mỗi câu hiện mẹo và giải thích biển trong hình.</p></div>
+      <div class="feat"><div class="ic">📜</div><h3>Theo quy định mới</h3><p>Chọn cấu trúc đề theo Thông tư 12/2025 hoặc Thông tư 108/2026.</p></div>
+      <div class="feat"><div class="ic">🏠</div><h3>Widget "Ôn nhanh"</h3><p>Trả lời một câu ngay trên màn hình chính, không cần mở app.</p></div>
+      <div class="feat"><div class="ic">🌙</div><h3>Giao diện sáng / tối</h3><p>Theo hệ thống hoặc tự chọn, chỉnh được cỡ chữ cho dễ đọc.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <h2>Xem app</h2>
+    <p class="sub" style="color:var(--gold-soft)">Một vài màn hình trong iLoveGPLX.</p>
+    <div class="carousel" id="car" aria-roledescription="carousel">
+      <div class="track" id="track">
+      <img src="img/01_home.jpg" alt="Màn hình chính" loading="lazy" draggable="false">
+      <img src="img/02_practice.jpg" alt="Ôn tập câu biển báo" loading="lazy" draggable="false">
+      <img src="img/03_exam.jpg" alt="Thi thử có đồng hồ" loading="lazy" draggable="false">
+      <img src="img/04_sets.jpg" alt="Bộ đề cố định theo hạng" loading="lazy" draggable="false">
+      <img src="img/05_signs.jpg" alt="Tra cứu biển báo giao thông" loading="lazy" draggable="false">
+      <img src="img/06_tips.jpg" alt="Mẹo thi" loading="lazy" draggable="false">
+      <img src="img/07_widget.jpg" alt="Widget Ôn nhanh trên màn hình chính" loading="lazy" draggable="false">
+      </div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <h2>Đúng nguồn, gọn nhẹ</h2>
+    <p class="sub">Học từ văn bản chính thức, không phải từ tin đồn trên mạng.</p>
+    <ul class="safe">
+      <li>Câu hỏi và đáp án lấy từ bộ 600 câu chính thức</li>
+      <li>Bộ câu theo hạng và câu điểm liệt theo Công văn 2262/CSGT</li>
+      <li>Biển báo theo QCVN 41:2024/BGTVT</li>
+      <li>Dùng không cần mạng, tiến độ lưu trên máy</li>
+      <li>Không cần tài khoản, không thu thập dữ liệu</li>
+      <li>Miễn phí</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Bắt đầu ôn thi ngay hôm nay</h2>
+    <p class="lead" style="margin:8px auto 0">Tải iLoveGPLX miễn phí.</p>
+    <div class="stores js-stores"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><a href="privacy.html">Chính sách quyền riêng tư</a><a href="mailto:rabbitvy.dev@gmail.com">Liên hệ</a></div>
+    <div>© 2026 Lê Xuân Nhất</div>
+  </div>
+</footer>
+
+<script>
+  // Điền link cửa hàng khi app đã lên store. Để trống thì nút hiện "Sắp ra mắt".
+  var LINKS = {
+    ios: "https://apps.apple.com/vn/app/id6821555026",
+    android: "https://play.google.com/store/apps/details?id=com.nhatlx.gplx"
+  };
+
+  var ua = navigator.userAgent || "";
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(ua);
+
+  var stores = [
+    { key: "ios", top: "Tải trên", name: "App Store" },
+    { key: "android", top: "Tải trên", name: "Google Play" }
+  ];
+  // Máy nào thì nút của hệ điều hành đó đứng trước và nổi bật.
+  if (isAndroid) stores.reverse();
+  var primary = isAndroid ? "android" : "ios";
+
+  function build(box) {
+    stores.forEach(function (s) {
+      var url = LINKS[s.key];
+      var a = document.createElement(url ? "a" : "span");
+      a.className = "btn" + (url ? (s.key === primary ? "" : " alt") : " soon");
+      if (url) { a.href = url; a.rel = "noopener"; }
+      a.innerHTML = "<small>" + (url ? s.top : "Sắp ra mắt trên") + "</small>" + s.name;
+      box.appendChild(a);
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".js-stores"), build);
+
+  // Dải ảnh tự chạy: trượt từng ảnh, hết thì quay về đầu; rê chuột / chạm thì tạm dừng.
+  (function () {
+    var car = document.getElementById("car"), track = document.getElementById("track"), dotsBox = document.getElementById("dots");
+    var n = track.children.length, i = 0, timer = null, held = false;
+    function vis() { return parseFloat(getComputedStyle(car).getPropertyValue("--vis")) || 1; }
+    function last() { return Math.max(0, Math.ceil(n - vis())); }
+    function render() {
+      var step = track.children[0].getBoundingClientRect().width + parseFloat(getComputedStyle(car).getPropertyValue("--gap"));
+      var maxShift = track.scrollWidth - car.clientWidth;
+      track.style.transform = "translateX(" + (-Math.min(i * step, maxShift)) + "px)";
+      Array.prototype.forEach.call(dotsBox.children, function (d, k) { d.className = k === i ? "on" : ""; });
+    }
+    function go(k) { var m = last(); i = k > m ? 0 : (k < 0 ? m : k); render(); }
+    function buildDots() {
+      dotsBox.innerHTML = "";
+      for (var k = 0; k <= last(); k++) (function (k) {
+        var b = document.createElement("button"); b.setAttribute("aria-label", "Ảnh " + (k + 1));
+        b.onclick = function () { go(k); restart(); }; dotsBox.appendChild(b);
+      })(k);
+    }
+    function restart() { clearInterval(timer); timer = setInterval(function () { if (!held) go(i + 1); }, 3000); }
+    car.addEventListener("mouseenter", function () { held = true; });
+    car.addEventListener("mouseleave", function () { held = false; });
+    var x0 = null;
+    car.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; held = true; }, { passive: true });
+    car.addEventListener("touchend", function (e) {
+      if (x0 !== null) { var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { go(i + (dx < 0 ? 1 : -1)); restart(); } }
+      x0 = null; held = false;
+    });
+    window.addEventListener("resize", function () { buildDots(); go(Math.min(i, last())); });
+    window.addEventListener("load", function () { buildDots(); go(0); restart(); });
+  })();
+</script>
+</body>
+</html>
