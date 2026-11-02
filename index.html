@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>iLoveApplication – Ứng dụng di động</title>
-<meta name="description" content="iLoveApplication tập hợp các ứng dụng di động: iLoveBK, iLoveGPLX, iLoveMoney và iLoveBaby. Liên hệ: rabbitvy.dev@gmail.com">
+<meta name="description" content="iLoveApplication tập hợp các ứng dụng di động: iLoveBK, iLoveGPLX, iLoveMoney, iLoveBaby và iLoveGym. Liên hệ: rabbitvy.dev@gmail.com">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,11 +37,11 @@
   .cta:hover { background: var(--accent-dark); }
   .hero-art { flex: 1 1 360px; min-width: 0; display: flex; justify-content: center; }
   .tiles { width: 100%; max-width: 420px; aspect-ratio: 1/1; border-radius: 48px; background: var(--accent);
-           display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: center; gap: 20px; padding: 36px; }
-  .tiles a { display: block; border-radius: 28px; transition: transform .2s; }
+           display: flex; flex-wrap: wrap; justify-content: center; align-content: center; gap: 18px; padding: 32px; }
+  .tiles a { display: block; flex: 0 0 calc((100% - 36px) / 3); border-radius: 22px; transition: transform .2s; }
   .tiles a:hover { transform: scale(1.05); }
   .tiles a:focus-visible { outline-color: #fff; }
-  .tiles img { width: 100%; aspect-ratio: 1/1; border-radius: 28px; object-fit: cover; display: block; }
+  .tiles img { width: 100%; aspect-ratio: 1/1; border-radius: 22px; object-fit: cover; display: block; }
 
   #apps { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   #apps .wrap { padding-top: 88px; padding-bottom: 88px; display: flex; flex-direction: column; gap: 48px; }
@@ -117,6 +117,7 @@
         <a href="#gplx" aria-label="Xem iLoveGPLX"><img src="images/gplx.png" alt=""></a>
         <a href="#ilovemoney" aria-label="Xem iLoveMoney"><img src="images/ilovemoney.png" alt=""></a>
         <a href="#ilovebaby" aria-label="Xem iLoveBaby"><img src="images/ilovebaby.png" alt=""></a>
+        <a href="#ilovegym" aria-label="Xem iLoveGym"><img src="images/ilovegym.png" alt=""></a>
       </div>
     </div>
   </div>
@@ -224,6 +225,23 @@
             Google Play
           </a>
         </div>
+      </article>
+
+      <article class="card" id="ilovegym">
+        <div class="card-head">
+          <img src="images/ilovegym.png" alt="Biểu tượng iLoveGym">
+          <div><h3>iLoveGym</h3><span class="tag">Nhật ký tập gym · Ăn uống</span></div>
+          <a class="detail" href="ilovegym/" aria-label="Xem chi tiết iLoveGym">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <p class="desc">Ghi buổi tập gym một chạm, tạ tăng đều từng tuần.</p>
+        <ul>
+          <li>Tạ và số lần buổi trước điền sẵn, đồng hồ nghỉ trên màn hình khoá</li>
+          <li>Giáo án mẫu, gợi ý tăng tạ, kỷ lục, bản đồ cơ, gói tập và PT</li>
+          <li>Ghi bữa với hơn 200 món Việt; không cần mạng, không cần tài khoản</li>
+        </ul>
+        <span class="soon">Sắp ra mắt</span>
       </article>
 
     </div>

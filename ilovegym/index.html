@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iLoveGym – Nhật ký tập gym và ăn uống</title>
+<meta name="description" content="Ghi set một chạm với tạ và số lần của buổi trước điền sẵn, đồng hồ nghỉ trên màn khoá, giáo án mẫu, gợi ý tăng tạ, bản đồ cơ, gói tập PT và hơn 200 món Việt. Không cần mạng, không cần tài khoản.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iLoveGym – Nhật ký tập gym và ăn uống">
+<meta property="og:description" content="Ghi set một chạm, tạ tăng đều từng tuần, đủ đạm với món Việt. Dữ liệu nằm trên máy bạn.">
+<meta property="og:image" content="https://nhatlx.github.io/ilovegym/img/og.jpg">
+<meta property="og:url" content="https://nhatlx.github.io/ilovegym/">
+<meta name="theme-color" content="#111418">
+<link rel="icon" href="img/icon.png">
+<style>
+  :root { --g9:#0b0d10; --g8:#111418; --g6:#1c2026; --g4:#c2410c; --gold:#f97316; --gold-soft:#fed7aa; --cream:#f6f7f9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font: 17px/1.6 "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         color: #fff; background: var(--g8); }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  .hero { background:
+      radial-gradient(600px 500px at 90% 0%, rgba(249,115,22,.28), transparent 60%),
+      radial-gradient(700px 600px at 0% 100%, rgba(194,65,12,.30), transparent 60%),
+      linear-gradient(165deg, var(--g6) 0%, var(--g8) 50%, var(--g9) 100%);
+    padding: 28px 0 72px; overflow: hidden; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 22px; }
+  .brand img { width: 44px; height: 44px; border-radius: 11px; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; margin-top: 48px; }
+  h1 { font-size: clamp(36px, 6vw, 62px); line-height: 1.08; letter-spacing: -.02em; font-weight: 800; }
+  h1 em { font-style: normal; color: var(--gold); }
+  .lead { margin-top: 18px; font-size: 20px; color: var(--gold-soft); max-width: 30em; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn { display: inline-flex; flex-direction: column; justify-content: center; min-width: 190px; padding: 12px 22px;
+         border-radius: 14px; text-decoration: none; background: var(--gold); color: var(--g9); font-weight: 800; font-size: 18px; line-height: 1.25; }
+  .btn small { font-weight: 600; font-size: 12.5px; opacity: .8; }
+  .btn.alt { background: rgba(255,255,255,.14); color: #fff; }
+  .btn.soon { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); pointer-events: none; }
+  .btn:hover { filter: brightness(1.06); }
+  .note { margin-top: 14px; font-size: 14px; color: rgba(255,255,255,.7); }
+  .shot { justify-self: center; width: min(300px, 70vw); border-radius: 40px; border: 9px solid #05070a; background: #05070a;
+          overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,.5); transform: rotate(3deg); }
+  .shot img { display: block; width: 100%; }
+
+  section { padding: 64px 0; }
+  .light { background: var(--cream); color: var(--g8); }
+  h2 { font-size: clamp(26px, 4vw, 38px); line-height: 1.2; letter-spacing: -.01em; margin-bottom: 8px; }
+  .sub { color: #5b6470; margin-bottom: 32px; }
+  .feats { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .feat { background: #fff; border-radius: 18px; padding: 22px; box-shadow: 0 2px 12px rgba(17,20,24,.08); }
+  .feat .ic { font-size: 30px; }
+  .feat h3 { font-size: 18px; margin: 8px 0 4px; }
+  .feat p { font-size: 15.5px; color: #4b5563; }
+  .feat.top { background: var(--g8); color: #fff; }
+  .feat.top p { color: var(--gold-soft); }
+
+  .carousel { --vis: 3; --gap: 18px; position: relative; overflow: hidden; touch-action: pan-y; }
+  .track { display: flex; gap: var(--gap); transition: transform .7s cubic-bezier(.22,.8,.28,1); will-change: transform; }
+  .track img { flex: 0 0 calc((100% - (var(--vis) - 1) * var(--gap)) / var(--vis)); width: 0; min-width: 0; height: auto; border-radius: 26px;
+               box-shadow: 0 10px 30px rgba(0,0,0,.35); user-select: none; -webkit-user-drag: none; }
+  .dots { display: flex; justify-content: center; gap: 8px; margin-top: 22px; }
+  .dots button { width: 10px; height: 10px; border: 0; border-radius: 99px; background: rgba(255,255,255,.3); cursor: pointer; padding: 0; transition: all .3s; }
+  .dots button.on { width: 28px; background: var(--gold); }
+  @media (max-width: 900px) { .carousel { --vis: 2; } }
+  @media (max-width: 560px) { .carousel { --vis: 1.25; } }
+  .dark { background: var(--g9); }
+
+  .safe { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 24px; list-style: none; }
+  .safe li::before { content: "✓ "; color: var(--gold); font-weight: 800; }
+
+  .cta { text-align: center; background: linear-gradient(165deg, var(--g6), var(--g8)); }
+  .cta .stores { justify-content: center; }
+  footer { background: var(--g9); padding: 28px 0; font-size: 14px; color: rgba(255,255,255,.65); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+  footer a { text-decoration: none; margin-right: 16px; }
+
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .shot { transform: none; }
+    .btn { flex: 1 1 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><img src="img/icon.png" alt="">iLoveGym</div>
+    <div class="hero-grid">
+      <div>
+        <h1>Ghi set một chạm,<br><em>tạ tăng đều từng tuần.</em></h1>
+        <p class="lead">Nhật ký tập gym tiếng Việt cho người tập nghiêm túc: tạ và số lần của buổi trước điền sẵn, giáo án, kỷ lục, bản đồ cơ và ăn đủ đạm với món Việt.</p>
+        <div class="stores js-stores"></div>
+        <p class="note">Mọi tính năng miễn phí. Không cần mạng, không cần tài khoản, dữ liệu lưu trên máy bạn.</p>
+      </div>
+      <div class="shot"><img src="img/01_home.jpg" alt="Màn đang tập của iLoveGym"></div>
+    </div>
+  </div>
+</header>
+
+<section class="light">
+  <div class="wrap">
+    <h2>Tập ở phòng, ghi trong vài giây</h2>
+    <p class="sub">Làm cho người đã tập từ 6 tháng trở lên, muốn thấy mình mạnh lên từng tuần.</p>
+    <div class="feats">
+      <div class="feat top"><div class="ic">✅</div><h3>Ghi set 1 chạm</h3><p>Mức tạ và số lần của buổi trước điền sẵn, chạm ✓ là xong. Có set khởi động, set giảm tạ, RIR.</p></div>
+      <div class="feat top"><div class="ic">⏱️</div><h3>Đồng hồ nghỉ</h3><p>Tự chạy sau mỗi set, có âm báo và rung, hiện trên màn hình khoá và Dynamic Island.</p></div>
+      <div class="feat top"><div class="ic">📈</div><h3>Gợi ý tăng tạ</h3><p>Biết hôm nay nên tăng tạ, thêm lần hay giữ nguyên, kèm kỷ lục cá nhân và biểu đồ 1RM.</p></div>
+      <div class="feat top"><div class="ic">🥢</div><h3>Đủ đạm với món Việt</h3><p>Hơn 200 món: phở, cơm tấm, bánh mì… Gõ không dấu, ghi bữa vài chạm, gợi ý "Ngày mai ăn gì?".</p></div>
+      <div class="feat"><div class="ic">📋</div><h3>Giáo án sẵn có</h3><p>4 giáo án mẫu: Full Body, Upper/Lower, Push/Pull/Legs, Bro split; tự soạn giáo án, app nhớ buổi kế tiếp.</p></div>
+      <div class="feat"><div class="ic">💪</div><h3>Bản đồ cơ</h3><p>Số set hiệu quả 7 ngày qua cho từng nhóm cơ, thấy ngay nhóm nào còn thiếu.</p></div>
+      <div class="feat"><div class="ic">🔁</div><h3>Máy bận?</h3><p>Chọn bài thay thế cùng nhóm cơ, xem lần trước tập bao nhiêu, đổi luôn trong giáo án nếu muốn.</p></div>
+      <div class="feat"><div class="ic">🏋️</div><h3>Thư viện 150 bài</h3><p>Tên tiếng Việt và tiếng Anh, hình minh hoạ động tác, gợi ý kỹ thuật, tìm không dấu.</p></div>
+      <div class="feat"><div class="ic">🧮</div><h3>Tính đĩa tạ</h3><p>Nhập mức tạ là biết mỗi bên lắp đĩa nào, theo đòn và bộ đĩa phòng bạn.</p></div>
+      <div class="feat"><div class="ic">📏</div><h3>Số đo và ảnh</h3><p>Cân nặng, các vòng, ảnh tiến bộ có khung mờ của lần trước; ảnh không vào thư viện máy.</p></div>
+      <div class="feat"><div class="ic">🎫</div><h3>Gói tập và PT</h3><p>Thẻ phòng gym, gói PT, gói lớp: còn mấy buổi, sắp hết hạn, giá mỗi buổi đã tập.</p></div>
+      <div class="feat"><div class="ic">💾</div><h3>Sao lưu ra file</h3><p>Xuất toàn bộ dữ liệu và ảnh ra một file, xuất CSV lịch sử tập, chuyển máy dễ dàng.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <h2>Xem app</h2>
+    <p class="sub" style="color:var(--gold-soft)">Một vài màn hình trong iLoveGym.</p>
+    <div class="carousel" id="car" aria-roledescription="carousel">
+      <div class="track" id="track">
+      <img src="img/store_01.jpg" alt="Ghi set 1 chạm" loading="lazy" draggable="false">
+      <img src="img/store_02.jpg" alt="Hôm nay tập gì? Đã có sẵn" loading="lazy" draggable="false">
+      <img src="img/store_03.jpg" alt="Thấy rõ cơ nào đã tập đủ" loading="lazy" draggable="false">
+      <img src="img/store_04.jpg" alt="Tạ tăng đều từng tuần" loading="lazy" draggable="false">
+      <img src="img/store_05.jpg" alt="Đủ đạm với món Việt" loading="lazy" draggable="false">
+      <img src="img/store_06.jpg" alt="Ngày mai ăn gì?" loading="lazy" draggable="false">
+      <img src="img/store_07.jpg" alt="Không cần mạng, tài khoản" loading="lazy" draggable="false">
+      </div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <h2>Dữ liệu của bạn ở lại trên máy bạn</h2>
+    <p class="sub">iLoveGym là công cụ ghi chép, không thay thế huấn luyện viên hay bác sĩ.</p>
+    <ul class="safe">
+      <li>Không cần tài khoản, dữ liệu lưu trên máy</li>
+      <li>Chạy hoàn toàn không cần mạng</li>
+      <li>Không gửi dữ liệu tập luyện cho ai</li>
+      <li>Ảnh tiến bộ không vào thư viện ảnh</li>
+      <li>Màn đang tập không bao giờ có quảng cáo</li>
+      <li>Mua một lần để xoá mọi quảng cáo</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Bắt đầu buổi tập tiếp theo</h2>
+    <p class="lead" style="margin:8px auto 0">Tải iLoveGym miễn phí.</p>
+    <div class="stores js-stores"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><a href="privacy.html">Chính sách quyền riêng tư</a><a href="terms.html">Điều khoản sử dụng</a><a href="mailto:rabbitvy.dev@gmail.com">Liên hệ</a></div>
+    <div>© 2026 Lê Xuân Nhất</div>
+  </div>
+</footer>
+
+<script>
+  // Điền link cửa hàng khi app đã lên store. Để trống thì nút hiện "Sắp ra mắt".
+  var LINKS = {
+    ios: "",     // https://apps.apple.com/vn/app/id6829353068
+    android: ""  // https://play.google.com/store/apps/details?id=com.nhatlx.ilovegym
+  };
+
+  var ua = navigator.userAgent || "";
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(ua);
+
+  var stores = [
+    { key: "ios", top: "Tải trên", name: "App Store" },
+    { key: "android", top: "Tải trên", name: "Google Play" }
+  ];
+  // Máy nào thì nút của hệ điều hành đó đứng trước và nổi bật.
+  if (isAndroid) stores.reverse();
+  var primary = isAndroid ? "android" : "ios";
+
+  function build(box) {
+    stores.forEach(function (s) {
+      var url = LINKS[s.key];
+      var a = document.createElement(url ? "a" : "span");
+      a.className = "btn" + (url ? (s.key === primary ? "" : " alt") : " soon");
+      if (url) { a.href = url; a.rel = "noopener"; }
+      a.innerHTML = "<small>" + (url ? s.top : "Sắp ra mắt trên") + "</small>" + s.name;
+      box.appendChild(a);
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".js-stores"), build);
+
+  // Dải ảnh tự chạy: trượt từng ảnh, hết thì quay về đầu; rê chuột / chạm thì tạm dừng.
+  (function () {
+    var car = document.getElementById("car"), track = document.getElementById("track"), dotsBox = document.getElementById("dots");
+    var n = track.children.length, i = 0, timer = null, held = false;
+    function vis() { return parseFloat(getComputedStyle(car).getPropertyValue("--vis")) || 1; }
+    function last() { return Math.max(0, Math.ceil(n - vis())); }
+    function render() {
+      var step = track.children[0].getBoundingClientRect().width + parseFloat(getComputedStyle(car).getPropertyValue("--gap"));
+      var maxShift = track.scrollWidth - car.clientWidth;
+      track.style.transform = "translateX(" + (-Math.min(i * step, maxShift)) + "px)";
+      Array.prototype.forEach.call(dotsBox.children, function (d, k) { d.className = k === i ? "on" : ""; });
+    }
+    function go(k) { var m = last(); i = k > m ? 0 : (k < 0 ? m : k); render(); }
+    function buildDots() {
+      dotsBox.innerHTML = "";
+      for (var k = 0; k <= last(); k++) (function (k) {
+        var b = document.createElement("button"); b.setAttribute("aria-label", "Ảnh " + (k + 1));
+        b.onclick = function () { go(k); restart(); }; dotsBox.appendChild(b);
+      })(k);
+    }
+    function restart() { clearInterval(timer); timer = setInterval(function () { if (!held) go(i + 1); }, 3000); }
+    car.addEventListener("mouseenter", function () { held = true; });
+    car.addEventListener("mouseleave", function () { held = false; });
+    var x0 = null;
+    car.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; held = true; }, { passive: true });
+    car.addEventListener("touchend", function (e) {
+      if (x0 !== null) { var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { go(i + (dx < 0 ? 1 : -1)); restart(); } }
+      x0 = null; held = false;
+    });
+    window.addEventListener("resize", function () { buildDots(); go(Math.min(i, last())); });
+    window.addEventListener("load", function () { buildDots(); go(0); restart(); });
+  })();
+</script>
+</body>
+</html>
