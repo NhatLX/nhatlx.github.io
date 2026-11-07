@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iLoveCKKN – Theo dõi chu kỳ kinh nguyệt</title>
+<meta name="description" content="Theo dõi chu kỳ bằng tiếng Việt: dự đoán kỳ tới kèm mức tin cậy, lịch âm dương, nhật ký vài chạm, hiểu quy luật cơ thể, hỗ trợ khi mong con. Không cần tài khoản, dữ liệu sức khoẻ ở lại trên máy bạn.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iLoveCKKN – Theo dõi chu kỳ kinh nguyệt">
+<meta property="og:description" content="Dự đoán là ước tính, dữ liệu sức khoẻ ở lại trên máy bạn. Không cần tài khoản.">
+<meta property="og:image" content="https://nhatlx.github.io/iloveckkn/img/og.jpg">
+<meta property="og:url" content="https://nhatlx.github.io/iloveckkn/">
+<meta name="theme-color" content="#5E1C33">
+<link rel="icon" href="img/icon.png">
+<style>
+  :root { --g9:#3A1220; --g8:#5E1C33; --g6:#8E2F4E; --g4:#8E2F4E; --gold:#F5C9D6; --gold-soft:#F7DDE5; --cream:#FAF6F1; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font: 17px/1.6 "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         color: #fff; background: var(--g8); }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  .hero { background:
+      radial-gradient(600px 500px at 90% 0%, rgba(245,201,214,.22), transparent 60%),
+      radial-gradient(700px 600px at 0% 100%, rgba(94,28,51,.5), transparent 60%),
+      linear-gradient(165deg, var(--g6) 0%, var(--g8) 50%, var(--g9) 100%);
+    padding: 28px 0 72px; overflow: hidden; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 22px; }
+  .brand img { width: 44px; height: 44px; border-radius: 11px; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; margin-top: 48px; }
+  h1 { font-size: clamp(36px, 6vw, 62px); line-height: 1.08; letter-spacing: -.02em; font-weight: 800; }
+  h1 em { font-style: normal; color: var(--gold); }
+  .lead { margin-top: 18px; font-size: 20px; color: var(--gold-soft); max-width: 30em; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn { display: inline-flex; flex-direction: column; justify-content: center; min-width: 190px; padding: 12px 22px;
+         border-radius: 14px; text-decoration: none; background: var(--gold); color: var(--g9); font-weight: 800; font-size: 18px; line-height: 1.25; }
+  .btn small { font-weight: 600; font-size: 12.5px; opacity: .8; }
+  .btn.alt { background: #fff; color: var(--g8); }
+  .btn.alt:hover { background: var(--gold-soft); filter: none; }
+  .btn.soon { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); pointer-events: none; }
+  .btn:hover { filter: brightness(1.06); }
+  .note { margin-top: 14px; font-size: 14px; color: rgba(255,255,255,.7); }
+  .shot { justify-self: center; width: min(300px, 70vw); border-radius: 40px; border: 9px solid #05070a; background: #05070a;
+          overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,.5); transform: rotate(3deg); }
+  .shot img { display: block; width: 100%; }
+
+  section { padding: 64px 0; }
+  .light { background: var(--cream); color: var(--g8); }
+  h2 { font-size: clamp(26px, 4vw, 38px); line-height: 1.2; letter-spacing: -.01em; margin-bottom: 8px; }
+  .sub { color: #6B5D58; margin-bottom: 32px; }
+  .feats { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .feat { background: #fff; border-radius: 18px; padding: 22px; box-shadow: 0 2px 12px rgba(17,20,24,.08); }
+  .feat .ic { font-size: 30px; }
+  .feat h3 { font-size: 18px; margin: 8px 0 4px; }
+  .feat p { font-size: 15.5px; color: #5b4b47; }
+  .feat.top { background: var(--g6); color: #fff; }
+  .feat.top p { color: var(--gold-soft); }
+
+  .carousel { --vis: 3; --gap: 18px; position: relative; overflow: hidden; touch-action: pan-y; }
+  .track { display: flex; gap: var(--gap); transition: transform .7s cubic-bezier(.22,.8,.28,1); will-change: transform; }
+  .track img { flex: 0 0 calc((100% - (var(--vis) - 1) * var(--gap)) / var(--vis)); width: 0; min-width: 0; height: auto; border-radius: 26px;
+               box-shadow: 0 10px 30px rgba(0,0,0,.35); user-select: none; -webkit-user-drag: none; }
+  .dots { display: flex; justify-content: center; gap: 8px; margin-top: 22px; }
+  .dots button { width: 10px; height: 10px; border: 0; border-radius: 99px; background: rgba(255,255,255,.3); cursor: pointer; padding: 0; transition: all .3s; }
+  .dots button.on { width: 28px; background: var(--gold); }
+  @media (max-width: 900px) { .carousel { --vis: 2; } }
+  @media (max-width: 560px) { .carousel { --vis: 1.25; } }
+  .dark { background: var(--g9); }
+
+  .safe { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 24px; list-style: none; }
+  .safe li::before { content: "✓ "; color: var(--g6); font-weight: 800; }
+
+  .cta { text-align: center; background: linear-gradient(165deg, var(--g6), var(--g8)); }
+  .cta .stores { justify-content: center; }
+  footer { background: var(--g9); padding: 28px 0; font-size: 14px; color: rgba(255,255,255,.65); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+  footer a { text-decoration: none; margin-right: 16px; }
+
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .shot { transform: none; }
+    .btn { flex: 1 1 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><img src="img/icon.png" alt="">iLoveCKKN</div>
+    <div class="hero-grid">
+      <div>
+        <h1>Theo dõi chu kỳ,<br><em>hiểu cơ thể mình.</em></h1>
+        <p class="lead">App theo dõi chu kỳ kinh nguyệt tiếng Việt: dự đoán kỳ tới kèm mức tin cậy, lịch âm dương, nhật ký vài chạm và hỗ trợ khi mong con.</p>
+        <div class="stores js-stores"></div>
+        <p class="note">Mọi tính năng miễn phí. Không cần tài khoản, dữ liệu sức khoẻ ở lại trên máy bạn.</p>
+      </div>
+      <div class="shot"><img src="img/01_home.jpg" alt="Màn Hôm nay của iLoveCKKN"></div>
+    </div>
+  </div>
+</header>
+
+<section class="light">
+  <div class="wrap">
+    <h2>Mọi thứ về chu kỳ, trong một app</h2>
+    <p class="sub">Cho người muốn tự theo dõi cơ thể và người đang mong con.</p>
+    <div class="feats">
+      <div class="feat top"><div class="ic">🌙</div><h3>Biết kỳ tới</h3><p>Dự đoán từ chính chu kỳ của bạn, hiện khoảng ngày và mức tin cậy. Luôn ghi rõ là ước tính.</p></div>
+      <div class="feat top"><div class="ic">📅</div><h3>Lịch âm dương</h3><p>Một màn thấy kỳ đã ghi, kỳ dự đoán, ngày dễ thụ thai, kèm ngày âm.</p></div>
+      <div class="feat top"><div class="ic">✍️</div><h3>Ghi vài chạm</h3><p>Lượng máu, đau bụng, tâm trạng, triệu chứng, năng lượng, giấc ngủ. Chọn là tự lưu.</p></div>
+      <div class="feat top"><div class="ic">🔒</div><h3>Riêng tư</h3><p>Không tài khoản, kho dữ liệu mã hoá, khoá PIN hoặc Face ID, thông báo kín đáo.</p></div>
+      <div class="feat"><div class="ic">📈</div><h3>Hiểu mình</h3><p>Độ dài chu kỳ so với mức tham khảo, triệu chứng hay gặp, quy luật lặp lại của riêng bạn.</p></div>
+      <div class="feat"><div class="ic">🌱</div><h3>Mong con</h3><p>Ngày dễ thụ thai, nhiệt độ cơ thể, que rụng trứng, xác nhận rụng trứng theo dữ liệu bạn ghi.</p></div>
+      <div class="feat"><div class="ic">🧺</div><h3>Túi đồ</h3><p>Theo dõi số băng còn lại, nhắc mua trước kỳ, nhắc thay băng khi cần.</p></div>
+      <div class="feat"><div class="ic">💌</div><h3>Nhắn người thương</h3><p>Chọn lời nhắn có sẵn, gửi tin hoặc thiệp qua Zalo, Messenger. Không kèm dữ liệu chu kỳ.</p></div>
+      <div class="feat"><div class="ic">📚</div><h3>Góc kiến thức</h3><p>Bài ngắn có nguồn rõ ràng, làm nổi các dấu hiệu nên đi khám.</p></div>
+      <div class="feat"><div class="ic">📄</div><h3>Báo cáo đi khám</h3><p>Tạo PDF tiếng Việt 3, 6 hoặc 12 tháng, bạn tự chọn gửi cho ai.</p></div>
+      <div class="feat"><div class="ic">🔔</div><h3>Nhắc nhở</h3><p>Sắp tới kỳ, trễ kỳ, uống thuốc, đo nhiệt độ. Nội dung kín đáo là mặc định.</p></div>
+      <div class="feat"><div class="ic">💾</div><h3>Sao lưu mã hoá</h3><p>Xuất một file khoá bằng mật khẩu của bạn, chuyển máy dễ dàng.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <h2>Xem app</h2>
+    <p class="sub" style="color:var(--gold-soft)">Một vài màn hình trong iLoveCKKN.</p>
+    <div class="carousel" id="car" aria-roledescription="carousel">
+      <div class="track" id="track">
+      <img src="img/store_01.jpg" alt="Biết kỳ tới còn bao lâu" loading="lazy" draggable="false">
+      <img src="img/store_02.jpg" alt="Lịch âm dương trên một màn" loading="lazy" draggable="false">
+      <img src="img/store_03.jpg" alt="Ghi mỗi ngày vài chạm" loading="lazy" draggable="false">
+      <img src="img/store_04.jpg" alt="Hiểu quy luật của riêng mình" loading="lazy" draggable="false">
+      <img src="img/store_05.jpg" alt="Đồng hành khi mong con" loading="lazy" draggable="false">
+      <img src="img/store_06.jpg" alt="Tiện ích nhỏ mà cần" loading="lazy" draggable="false">
+      <img src="img/store_07.jpg" alt="Dữ liệu ở lại trên máy bạn" loading="lazy" draggable="false">
+      </div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <h2>Dữ liệu sức khoẻ ở lại trên máy bạn</h2>
+    <p class="sub">iLoveCKKN không phải thiết bị y tế và không phải biện pháp tránh thai. Dự đoán chỉ là ước tính; hãy hỏi bác sĩ về các vấn đề sức khoẻ.</p>
+    <ul class="safe">
+      <li>Không cần tài khoản, không có máy chủ</li>
+      <li>Kho dữ liệu trên máy được mã hoá</li>
+      <li>Dữ liệu sức khoẻ không gửi cho ai</li>
+      <li>Quảng cáo không cá nhân hoá, không dùng dữ liệu sức khoẻ</li>
+      <li>Không có công cụ phân tích hành vi</li>
+      <li>Mua một lần để xoá mọi quảng cáo</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Bắt đầu theo dõi chu kỳ</h2>
+    <p class="lead" style="margin:8px auto 0">iLoveCKKN sắp có trên App Store và Google Play.</p>
+    <div class="stores js-stores"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><a href="privacy.html">Chính sách quyền riêng tư</a><a href="terms.html">Điều khoản sử dụng</a><a href="mailto:rabbitvy.dev@gmail.com">Liên hệ</a></div>
+    <div>© 2026 Lê Xuân Nhất</div>
+  </div>
+</footer>
+
+<script>
+  // Điền link cửa hàng khi app đã lên store. Để trống thì nút hiện "Sắp ra mắt".
+  var LINKS = {
+    ios: "",
+    android: ""
+  };
+
+  var ua = navigator.userAgent || "";
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(ua);
+
+  var stores = [
+    { key: "ios", top: "Tải trên", name: "App Store" },
+    { key: "android", top: "Tải trên", name: "Google Play" }
+  ];
+  // Máy nào thì nút của hệ điều hành đó đứng trước và nổi bật.
+  if (isAndroid) stores.reverse();
+  var primary = isAndroid ? "android" : "ios";
+
+  function build(box) {
+    stores.forEach(function (s) {
+      var url = LINKS[s.key];
+      var a = document.createElement(url ? "a" : "span");
+      a.className = "btn" + (url ? (s.key === primary ? "" : " alt") : " soon");
+      if (url) { a.href = url; a.rel = "noopener"; }
+      a.innerHTML = "<small>" + (url ? s.top : "Sắp ra mắt trên") + "</small>" + s.name;
+      box.appendChild(a);
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".js-stores"), build);
+
+  // Dải ảnh tự chạy: trượt từng ảnh, hết thì quay về đầu; rê chuột / chạm thì tạm dừng.
+  (function () {
+    var car = document.getElementById("car"), track = document.getElementById("track"), dotsBox = document.getElementById("dots");
+    var n = track.children.length, i = 0, timer = null, held = false;
+    function vis() { return parseFloat(getComputedStyle(car).getPropertyValue("--vis")) || 1; }
+    function last() { return Math.max(0, Math.ceil(n - vis())); }
+    function render() {
+      var step = track.children[0].getBoundingClientRect().width + parseFloat(getComputedStyle(car).getPropertyValue("--gap"));
+      var maxShift = track.scrollWidth - car.clientWidth;
+      track.style.transform = "translateX(" + (-Math.min(i * step, maxShift)) + "px)";
+      Array.prototype.forEach.call(dotsBox.children, function (d, k) { d.className = k === i ? "on" : ""; });
+    }
+    function go(k) { var m = last(); i = k > m ? 0 : (k < 0 ? m : k); render(); }
+    function buildDots() {
+      dotsBox.innerHTML = "";
+      for (var k = 0; k <= last(); k++) (function (k) {
+        var b = document.createElement("button"); b.setAttribute("aria-label", "Ảnh " + (k + 1));
+        b.onclick = function () { go(k); restart(); }; dotsBox.appendChild(b);
+      })(k);
+    }
+    function restart() { clearInterval(timer); timer = setInterval(function () { if (!held) go(i + 1); }, 3000); }
+    car.addEventListener("mouseenter", function () { held = true; });
+    car.addEventListener("mouseleave", function () { held = false; });
+    var x0 = null;
+    car.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; held = true; }, { passive: true });
+    car.addEventListener("touchend", function (e) {
+      if (x0 !== null) { var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { go(i + (dx < 0 ? 1 : -1)); restart(); } }
+      x0 = null; held = false;
+    });
+    window.addEventListener("resize", function () { buildDots(); go(Math.min(i, last())); });
+    window.addEventListener("load", function () { buildDots(); go(0); restart(); });
+  })();
+</script>
+</body>
+</html>
