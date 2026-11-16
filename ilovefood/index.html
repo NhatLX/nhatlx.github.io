@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iLoveFood – Học nấu cơm Việt mỗi ngày</title>
+<meta name="description" content="App học nấu món Việt cho người mới vào bếp: gợi ý mâm cơm hôm nay, 100 công thức dễ làm, nấu từng bước có hẹn giờ, thực đơn tuần và danh sách đi chợ tự gộp. Không cần tài khoản, dữ liệu ở lại trên máy bạn.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iLoveFood – Học nấu cơm Việt mỗi ngày">
+<meta property="og:description" content="Hôm nay ăn gì, nấu thế nào, đi chợ mua gì: mâm cơm Việt cho người mới vào bếp. Không cần tài khoản, dữ liệu ở lại trên máy bạn.">
+<meta property="og:image" content="https://nhatlx.github.io/ilovefood/img/og.jpg">
+<meta property="og:url" content="https://nhatlx.github.io/ilovefood/">
+<meta name="theme-color" content="#B5401E">
+<link rel="icon" href="img/icon.png">
+<style>
+  :root { --g9:#5E200D; --g8:#7E2A12; --g6:#B5401E; --g4:#B5401E; --gold:#FBD38A; --gold-soft:#F6DED4; --cream:#FFF8EE; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font: 17px/1.6 "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         color: #fff; background: var(--g8); }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  .hero { background:
+      radial-gradient(600px 500px at 90% 0%, rgba(251,211,138,.18), transparent 60%),
+      radial-gradient(700px 600px at 0% 100%, rgba(94,32,13,.55), transparent 60%),
+      linear-gradient(165deg, #d8633c 0%, var(--g6) 40%, var(--g8) 100%);
+    padding: 28px 0 72px; overflow: hidden; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 22px; }
+  .brand img { width: 44px; height: 44px; border-radius: 11px; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; margin-top: 48px; }
+  h1 { font-size: clamp(36px, 6vw, 62px); line-height: 1.08; letter-spacing: -.02em; font-weight: 800; }
+  h1 em { font-style: normal; color: var(--gold); }
+  .lead { margin-top: 18px; font-size: 20px; color: var(--gold-soft); max-width: 30em; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn { display: inline-flex; flex-direction: column; justify-content: center; min-width: 190px; padding: 12px 22px;
+         border-radius: 14px; text-decoration: none; background: var(--gold); color: var(--g9); font-weight: 800; font-size: 18px; line-height: 1.25; }
+  .btn small { font-weight: 600; font-size: 12.5px; opacity: .8; }
+  .btn.alt { background: #fff; color: var(--g8); }
+  .btn.alt:hover { background: var(--gold-soft); filter: none; }
+  .btn.soon { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); pointer-events: none; }
+  .btn:hover { filter: brightness(1.06); }
+  .note { margin-top: 14px; font-size: 14px; color: rgba(255,255,255,.7); }
+  .shot { justify-self: center; width: min(300px, 70vw); border-radius: 40px; border: 9px solid #05070a; background: #05070a;
+          overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,.5); transform: rotate(3deg); }
+  .shot img { display: block; width: 100%; }
+
+  section { padding: 64px 0; }
+  .light { background: var(--cream); color: var(--g8); }
+  h2 { font-size: clamp(26px, 4vw, 38px); line-height: 1.2; letter-spacing: -.01em; margin-bottom: 8px; }
+  .sub { color: #6E5D50; margin-bottom: 32px; }
+  .feats { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .feat { background: #fff; border-radius: 18px; padding: 22px; box-shadow: 0 2px 12px rgba(17,20,24,.08); }
+  .feat .ic { font-size: 30px; }
+  .feat h3 { font-size: 18px; margin: 8px 0 4px; }
+  .feat p { font-size: 15.5px; color: #6E5D50; }
+  .feat.top { background: var(--g6); color: #fff; }
+  .feat.top p { color: var(--gold-soft); }
+
+  .carousel { --vis: 3; --gap: 18px; position: relative; overflow: hidden; touch-action: pan-y; }
+  .track { display: flex; gap: var(--gap); transition: transform .7s cubic-bezier(.22,.8,.28,1); will-change: transform; }
+  .track img { flex: 0 0 calc((100% - (var(--vis) - 1) * var(--gap)) / var(--vis)); width: 0; min-width: 0; height: auto; border-radius: 26px;
+               box-shadow: 0 10px 30px rgba(0,0,0,.35); user-select: none; -webkit-user-drag: none; }
+  .dots { display: flex; justify-content: center; gap: 8px; margin-top: 22px; }
+  .dots button { width: 10px; height: 10px; border: 0; border-radius: 99px; background: rgba(255,255,255,.3); cursor: pointer; padding: 0; transition: all .3s; }
+  .dots button.on { width: 28px; background: var(--gold); }
+  @media (max-width: 900px) { .carousel { --vis: 2; } }
+  @media (max-width: 560px) { .carousel { --vis: 1.25; } }
+  .dark { background: var(--g9); }
+
+  .safe { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 24px; list-style: none; }
+  .safe li::before { content: "✓ "; color: var(--g6); font-weight: 800; }
+
+  .cta { text-align: center; background: linear-gradient(165deg, var(--g6), var(--g8)); }
+  .cta .stores { justify-content: center; }
+  footer { background: var(--g9); padding: 28px 0; font-size: 14px; color: rgba(255,255,255,.65); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+  footer a { text-decoration: none; margin-right: 16px; }
+
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .shot { transform: none; }
+    .btn { flex: 1 1 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><img src="img/icon.png" alt="">iLoveFood</div>
+    <div class="hero-grid">
+      <div>
+        <h1>Hôm nay ăn gì?<br><em>Nấu được ngay.</em></h1>
+        <p class="lead">App học nấu món Việt cho người mới vào bếp: gợi ý mâm cơm hôm nay, công thức dễ làm, nấu từng bước có hẹn giờ, thực đơn tuần và danh sách đi chợ tự gộp.</p>
+        <div class="stores js-stores"></div>
+        <p class="note">Mọi tính năng miễn phí, có quảng cáo nhỏ giữa nội dung (không có trong lúc nấu); gói Xoá quảng cáo mua một lần. Không cần tài khoản, dữ liệu ở lại trên máy bạn.</p>
+      </div>
+      <div class="shot"><img src="img/01_home.jpg" alt="Màn Hôm nay của iLoveFood: mâm cơm gợi ý"></div>
+    </div>
+  </div>
+</header>
+
+<section class="light">
+  <div class="wrap">
+    <h2>Từ “ăn gì” tới “dọn mâm”, trong một app</h2>
+    <p class="sub">100 món Việt quen thuộc do iLoveFood tự biên soạn, viết cho người chưa từng nấu.</p>
+    <div class="feats">
+      <div class="feat top"><div class="ic">🍲</div><h3>Hôm nay ăn gì</h3><p>Mâm mặn, canh, rau hợp nhau theo số người, thời gian và mùa. Ghim món thích, đổi món khác một chạm.</p></div>
+      <div class="feat top"><div class="ic">👩‍🍳</div><h3>Nấu từng bước</h3><p>Chữ to, một bước một màn, hẹn giờ ngay trong bước và báo cả khi tắt màn hình; chạm từ khó để xem giải thích.</p></div>
+      <div class="feat top"><div class="ic">🗓️</div><h3>Thực đơn tuần</h3><p>Tạo cả tuần một chạm, không lặp món, kéo đổi bữa, ước tính chi phí.</p></div>
+      <div class="feat top"><div class="ic">🛒</div><h3>Đi chợ</h3><p>Danh sách tự gộp từ thực đơn, chia theo quầy, ghi lượng kiểu chợ: lạng, mớ, quả; ẩn đồ nhà sẵn có.</p></div>
+      <div class="feat"><div class="ic">🧊</div><h3>Tủ lạnh còn gì</h3><p>Chọn đồ đang có, xem món đủ nguyên liệu hay chỉ thiếu 1 thứ.</p></div>
+      <div class="feat"><div class="ic">🎯</div><h3>Lộ trình 30 món</h3><p>Học từ luộc, rán tới kho, mỗi món một kỹ năng, nhận huy hiệu khi nấu xong.</p></div>
+      <div class="feat"><div class="ic">📒</div><h3>Sổ món nhà mình</h3><p>Chép món có sẵn rồi sửa theo khẩu vị, tự soạn món kèm ảnh, gửi món cho bạn bè.</p></div>
+      <div class="feat"><div class="ic">🥗</div><h3>Hồ sơ ăn uống</h3><p>Ăn chay, món không ăn được, dụng cụ trong bếp: gợi ý tự lọc theo bạn.</p></div>
+      <div class="feat"><div class="ic">🔔</div><h3>Nhắc rã đông</h3><p>Tối hôm trước nhắc lấy thịt cá ra khỏi ngăn đá cho bữa mai.</p></div>
+      <div class="feat"><div class="ic">💾</div><h3>Sao lưu ra file</h3><p>Gom toàn bộ dữ liệu kể cả ảnh món vào một file khi đổi máy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <h2>Xem app</h2>
+    <p class="sub" style="color:var(--gold-soft)">Một vài màn hình trong iLoveFood.</p>
+    <div class="carousel" id="car" aria-roledescription="carousel">
+      <div class="track" id="track">
+      <img src="img/store_01.jpg" alt="Hôm nay ăn gì? Có mâm cơm ngay" loading="lazy" draggable="false">
+      <img src="img/store_02.jpg" alt="Công thức dễ cho người mới" loading="lazy" draggable="false">
+      <img src="img/store_03.jpg" alt="Nấu từng bước, hẹn giờ sẵn" loading="lazy" draggable="false">
+      <img src="img/store_04.jpg" alt="Thực đơn cả tuần chỉ một chạm" loading="lazy" draggable="false">
+      <img src="img/store_05.jpg" alt="Đi chợ gộp sẵn theo quầy" loading="lazy" draggable="false">
+      <img src="img/store_06.jpg" alt="Tủ lạnh còn gì? Có món nấu ngay" loading="lazy" draggable="false">
+      <img src="img/store_07.jpg" alt="Lộ trình 30 món từ luộc tới kho" loading="lazy" draggable="false">
+      <img src="img/store_08.jpg" alt="Không tài khoản, dữ liệu ở trên máy" loading="lazy" draggable="false">
+      </div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <h2>Bếp của bạn, dữ liệu của bạn</h2>
+    <p class="sub">iLoveFood không có máy chủ: thực đơn, sổ món và danh sách chợ chỉ nằm trên điện thoại.</p>
+    <ul class="safe">
+      <li>Không cần tài khoản, không đăng nhập</li>
+      <li>Thực đơn, sổ món, ảnh món không gửi cho ai</li>
+      <li>Chạy đủ khi không có mạng (trừ quảng cáo và mua gói)</li>
+      <li>Không quảng cáo toàn màn hình, không quảng cáo lúc nấu</li>
+      <li>Không có công cụ phân tích hành vi</li>
+      <li>Gói Xoá quảng cáo mua một lần, không thuê bao</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Vào bếp thôi</h2>
+    <p class="lead" style="margin:8px auto 0">iLoveFood sắp ra mắt trên App Store và Google Play.</p>
+    <div class="stores js-stores"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><a href="privacy.html">Chính sách quyền riêng tư</a><a href="terms.html">Điều khoản sử dụng</a><a href="mailto:rabbitvy.dev@gmail.com">Liên hệ</a></div>
+    <div>© 2026 Lê Xuân Nhất</div>
+  </div>
+</footer>
+
+<script>
+  // Điền link cửa hàng khi app đã lên store. Để trống thì nút hiện "Sắp ra mắt".
+  var LINKS = {
+    ios: "",
+    android: ""
+  };
+
+  var ua = navigator.userAgent || "";
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(ua);
+
+  var stores = [
+    { key: "ios", top: "Tải trên", name: "App Store" },
+    { key: "android", top: "Tải trên", name: "Google Play" }
+  ];
+  // Máy nào thì nút của hệ điều hành đó đứng trước và nổi bật.
+  if (isAndroid) stores.reverse();
+  var primary = isAndroid ? "android" : "ios";
+
+  function build(box) {
+    stores.forEach(function (s) {
+      var url = LINKS[s.key];
+      var a = document.createElement(url ? "a" : "span");
+      a.className = "btn" + (url ? (s.key === primary ? "" : " alt") : " soon");
+      if (url) { a.href = url; a.rel = "noopener"; }
+      a.innerHTML = "<small>" + (url ? s.top : "Sắp ra mắt trên") + "</small>" + s.name;
+      box.appendChild(a);
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".js-stores"), build);
+
+  // Dải ảnh tự chạy: trượt từng ảnh, hết thì quay về đầu; rê chuột / chạm thì tạm dừng.
+  (function () {
+    var car = document.getElementById("car"), track = document.getElementById("track"), dotsBox = document.getElementById("dots");
+    var n = track.children.length, i = 0, timer = null, held = false;
+    function vis() { return parseFloat(getComputedStyle(car).getPropertyValue("--vis")) || 1; }
+    function last() { return Math.max(0, Math.ceil(n - vis())); }
+    function render() {
+      var step = track.children[0].getBoundingClientRect().width + parseFloat(getComputedStyle(car).getPropertyValue("--gap"));
+      var maxShift = track.scrollWidth - car.clientWidth;
+      track.style.transform = "translateX(" + (-Math.min(i * step, maxShift)) + "px)";
+      Array.prototype.forEach.call(dotsBox.children, function (d, k) { d.className = k === i ? "on" : ""; });
+    }
+    function go(k) { var m = last(); i = k > m ? 0 : (k < 0 ? m : k); render(); }
+    function buildDots() {
+      dotsBox.innerHTML = "";
+      for (var k = 0; k <= last(); k++) (function (k) {
+        var b = document.createElement("button"); b.setAttribute("aria-label", "Ảnh " + (k + 1));
+        b.onclick = function () { go(k); restart(); }; dotsBox.appendChild(b);
+      })(k);
+    }
+    function restart() { clearInterval(timer); timer = setInterval(function () { if (!held) go(i + 1); }, 3000); }
+    car.addEventListener("mouseenter", function () { held = true; });
+    car.addEventListener("mouseleave", function () { held = false; });
+    var x0 = null;
+    car.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; held = true; }, { passive: true });
+    car.addEventListener("touchend", function (e) {
+      if (x0 !== null) { var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { go(i + (dx < 0 ? 1 : -1)); restart(); } }
+      x0 = null; held = false;
+    });
+    window.addEventListener("resize", function () { buildDots(); go(Math.min(i, last())); });
+    window.addEventListener("load", function () { buildDots(); go(0); restart(); });
+  })();
+</script>
+</body>
+</html>
