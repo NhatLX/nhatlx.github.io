@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lời mời dùng iLoveMoney</title>
+<meta name="description" content="Bạn được mời dùng iLoveMoney – ghi chi tiêu nhanh, đặt ngân sách, quét bill chuyển khoản. Nhập mã mời để nhận 7 ngày Premium.">
+<style>
+  :root { --bg: #ffffff; --fg: #14211B; --muted: #5B6761; --line: #CFD8D3; --brand: #0E6B4B; --soft: #DDEFE6; --btn: #14211B; --btn-fg: #ffffff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0E1512; --fg: #E8EFEB; --muted: #A3B0A9; --line: #34423B; --brand: #3DAA7D; --soft: #173A2C; --btn: #E8EFEB; --btn-fg: #0E1512; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 440px; margin: 0 auto; padding: 40px 16px 48px; text-align: center; }
+  .logo { width: 72px; height: 72px; border-radius: 18px; margin: 0 auto 16px; display: block; }
+  h1 { font-size: 1.45em; line-height: 1.3; margin: 0 0 8px; }
+  p { color: var(--muted); margin: 0 0 8px; }
+  .code-box { margin: 24px 0 10px; border: 2px dashed var(--brand); border-radius: 18px; padding: 16px; }
+  .code-box small { color: var(--muted); display: block; }
+  .code { font: 700 2em/1.3 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: .12em; color: var(--brand); word-break: break-all; }
+  button, .store { display: block; width: 100%; min-height: 52px; border-radius: 14px; border: 0; font: 600 1em/1 inherit;
+                   font-family: inherit; text-decoration: none; display: flex; align-items: center; justify-content: center; margin-top: 10px; cursor: pointer; }
+  button { background: var(--soft); color: var(--fg); }
+  .store { background: var(--btn); color: var(--btn-fg); }
+  .hint { font-size: .9em; margin-top: 14px; }
+  .status { font-size: .8em; margin-top: 14px; min-height: 1.2em; }
+  .hidden { display: none; }
+  footer { margin-top: 32px; font-size: .8em; color: var(--muted); }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="img/icon.png" alt="iLoveMoney" onerror="this.style.display='none'">
+  <h1>Bạn được mời dùng iLoveMoney</h1>
+  <p>Ghi chi tiêu nhanh, đặt ngân sách, quét bill chuyển khoản.</p>
+
+  <div id="with-code" class="hidden">
+    <div class="code-box">
+      <small>Mã mời của bạn</small>
+      <div class="code" id="code"></div>
+    </div>
+    <button type="button" id="copy">Sao chép mã</button>
+    <p class="hint">Mở app, đăng nhập rồi nhập mã để nhận 7 ngày Premium.</p>
+  </div>
+
+  <a class="store" id="ios" href="https://apps.apple.com/vn/app/id6823913582">Tải trên App Store</a>
+  <a class="store" id="android" href="https://play.google.com/store/apps/details?id=com.nhatlx.ilovemoney">Tải trên Google Play</a>
+  <p class="status" id="status" aria-live="polite"></p>
+
+  <footer>
+    <a href="terms.html#moi-ban-be">Điều khoản chương trình</a> ·
+    <a href="privacy.html">Quyền riêng tư</a>
+  </footer>
+</main>
+<script>
+(function () {
+  // Không cookie, không gửi dữ liệu: chỉ đọc mã trên link và chuyển sang store.
+  var PLAY = 'https://play.google.com/store/apps/details?id=com.nhatlx.ilovemoney';
+  var raw = new URLSearchParams(location.search).get('c') || '';
+  var code = raw.replace(/[\s-]/g, '').toUpperCase();
+  if (!/^[ABCDEFGHJKMNPQRSTUVWXYZ2-9]{6}$/.test(code)) code = null;
+
+  var ua = navigator.userAgent || '';
+  var android = /Android/i.test(ua);
+  var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && 'ontouchend' in document);
+  var ios_link = document.getElementById('ios');
+  var android_link = document.getElementById('android');
+
+  if (code) {
+    document.getElementById('with-code').classList.remove('hidden');
+    document.getElementById('code').textContent = code.slice(0, 3) + ' ' + code.slice(3);
+    // Google Play chuyển chuỗi này cho app khi cài (Install Referrer).
+    android_link.href = PLAY + '&referrer=' + encodeURIComponent('code=' + code);
+    var copy = document.getElementById('copy');
+    copy.addEventListener('click', function () {
+      var done = function () { copy.textContent = 'Đã sao chép ✓'; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(done, function () {});
+      }
+    });
+  }
+
+  // Điện thoại: chỉ hiện nút store của máy và tự chuyển sau chút ít để kịp
+  // thấy / sao chép mã. Máy tính: hiện cả hai nút.
+  var target = null;
+  if (android) { ios_link.classList.add('hidden'); target = android_link; }
+  else if (ios) { android_link.classList.add('hidden'); target = ios_link; }
+  if (target) {
+    document.getElementById('status').textContent =
+      android ? 'Đang chuyển tới Google Play…' : 'Đang chuyển tới App Store…';
+    setTimeout(function () { location.href = target.href; }, code ? 2500 : 800);
+  }
+})();
+</script>
+</body>
+</html>
