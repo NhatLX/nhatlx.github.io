@@ -72,7 +72,7 @@
 
   if (code) {
     document.getElementById('with-code').classList.remove('hidden');
-    document.getElementById('code').textContent = code.slice(0, 3) + ' ' + code.slice(3);
+    document.getElementById('code').textContent = code;
     // Google Play chuyển chuỗi này cho app khi cài (Install Referrer).
     android_link.href = PLAY + '&referrer=' + encodeURIComponent('code=' + code);
     var copy = document.getElementById('copy');
