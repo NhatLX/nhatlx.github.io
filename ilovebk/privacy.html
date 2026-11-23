@@ -28,7 +28,7 @@
 <section id="vi" lang="vi">
 <h1>Chính sách quyền riêng tư – iLoveBK</h1>
 
-<p class="date">Có hiệu lực từ: 11/11/2026</p>
+<p class="date">Có hiệu lực từ: 23/11/2026</p>
 
 <p>iLoveBK là công cụ hỗ trợ quản lý học tập dành cho sinh viên Đại học Bách khoa Hà Nội, do một cựu sinh viên tự phát triển.</p>
 
@@ -36,6 +36,7 @@
 
 <ul>
   <li>Bạn nhập mã số sinh viên, mật khẩu và mã xác thực vào màn đăng nhập của ứng dụng. Ứng dụng chuyển chúng vào trang đăng nhập của trường (ctt-sis.hust.edu.vn), được mở ngầm ngay trong ứng dụng; trang này mã hoá mật khẩu và gửi thẳng tới trường. Ứng dụng <strong>không lưu</strong> mật khẩu và không gửi mật khẩu đi đâu khác.</li>
+  <li>Bạn cũng có thể chọn <strong>Đăng nhập bằng Office 365</strong>. Khi đó ứng dụng mở trang đăng nhập của Microsoft (login.microsoftonline.com) ngay trong ứng dụng; bạn nhập tài khoản Office 365 của trường vào chính trang của Microsoft, và Microsoft xác nhận với trang của trường. Ứng dụng <strong>không đọc, không lưu</strong> mật khẩu Office 365 của bạn. Microsoft có thể giữ phiên đăng nhập của họ (cookie) trong ứng dụng để lần sau không phải nhập lại; phiên này bị xoá khi bạn đăng xuất.</li>
   <li>Hệ điều hành có thể đề nghị lưu mật khẩu vào trình quản lý mật khẩu của bạn (iCloud Keychain, Google Password Manager). Việc lưu hay không do bạn chọn, và do hệ điều hành xử lý, không qua ứng dụng.</li>
   <li>Ứng dụng chỉ giữ phiên đăng nhập (cookie) do trang của trường cấp để đọc dữ liệu cho bạn. Phiên này bị xoá khi bạn đăng xuất hoặc khi phiên hết hạn.</li>
 </ul>
@@ -54,7 +55,7 @@
 <p>Ứng dụng cũng đọc tuần học và học kỳ hiện tại từ trang công khai sis.hust.edu.vn, không cần đăng nhập.</p>
 
 <ul>
-  <li>Tất cả dữ liệu này chỉ được lưu <strong>trên điện thoại của bạn</strong>, không gửi tới máy chủ của nhà phát triển hay bất kỳ bên nào khác. Nhà phát triển không xem được dữ liệu của bạn. Ngoại lệ duy nhất là Review học phần, nếu bạn dùng (mục 4).</li>
+  <li>Tất cả dữ liệu này chỉ được lưu <strong>trên điện thoại của bạn</strong>, không gửi tới máy chủ của nhà phát triển hay bất kỳ bên nào khác. Nhà phát triển không xem được dữ liệu của bạn. Ngoại lệ là Review học phần và Tìm người yêu, nếu bạn dùng (mục 4 và 5).</li>
 </ul>
 
 <h2>3. Các tính năng khác</h2>
@@ -67,12 +68,14 @@
   <li>Lịch thi: nếu bạn tải lên file PDF lịch thi của trường, ứng dụng chỉ nhận đúng file bạn chọn qua bộ chọn tệp của hệ điều hành, đọc file ngay trên điện thoại và lưu lịch thi đọc được trên điện thoại để đối chiếu với thời khoá biểu của bạn; file không được gửi đi đâu và lịch thi bị xoá khi bạn đăng xuất.</li>
   <li>Bản đồ trường có sẵn trong ứng dụng (dữ liệu từ OpenStreetMap) và dùng được khi không có mạng. Ứng dụng không xin quyền vị trí. Nút “Chỉ đường” mở Google Maps với vị trí toà nhà làm điểm đến; việc chỉ đường do Google Maps xử lý.</li>
   <li>Link học trực tuyến trong lịch học được mở bằng trình duyệt hoặc ứng dụng tương ứng trên điện thoại của bạn.</li>
+  <li>Khoá ứng dụng (nếu bạn bật) dùng Face ID, vân tay hoặc mật khẩu màn hình khoá của điện thoại. Việc nhận diện do hệ điều hành thực hiện; ứng dụng chỉ nhận kết quả mở khoá được hay không, không nhận dữ liệu khuôn mặt, vân tay hay mật khẩu nào.</li>
   <li>Chính sách này và Điều khoản sử dụng được mở trong trình duyệt từ trang nhatlx.github.io; ứng dụng không lưu bản sao nào.</li>
+  <li>Kiểm tra phiên bản: mỗi khi mở ứng dụng, ứng dụng hỏi Firebase Remote Config (Google) xem đã có phiên bản mới chưa, để nhắc bạn cập nhật, hoặc yêu cầu cập nhật khi phiên bản đang dùng không còn chạy được. Việc này kèm theo mã cài đặt ngẫu nhiên mà Firebase cấp cho ứng dụng, không kèm mã số sinh viên, tên hay dữ liệu học tập nào. Firebase App Check cũng được dùng để xác nhận yêu cầu đến từ ứng dụng thật.</li>
 </ul>
 
-<h2>4. Review học phần (ngoại lệ duy nhất)</h2>
+<h2>4. Review học phần</h2>
 
-<p>Review học phần là tính năng tuỳ chọn. Chỉ khi bạn mở nó, ứng dụng mới kết nối tới Firebase (Google) và tạo một tài khoản <strong>ẩn danh</strong> cho điện thoại, không gắn với tên, mã số sinh viên hay email của bạn.</p>
+<p>Review học phần là tính năng tuỳ chọn. Chỉ khi bạn mở nó, ứng dụng mới tạo trên Firebase (Google) một tài khoản <strong>ẩn danh</strong> cho điện thoại, không gắn với tên hay email của bạn. Nếu bạn dùng Tìm người yêu, tài khoản này được gắn với mã số sinh viên của bạn (mục 5); review vẫn hiển thị ẩn danh với người khác.</p>
 
 <ul>
   <li>Chỉ những gì bạn tự viết và bấm đăng mới được lưu trên máy chủ Firebase: số sao, các đánh giá độ khó, khối lượng, nhận xét nhanh, giảng viên bạn bình chọn, nội dung bạn viết, <strong>4 số đầu mã số sinh viên</strong> (năm vào trường, hiển thị dạng 2023****) và điểm chữ của môn đó <strong>nếu bạn bật chia sẻ điểm</strong>. Mã số sinh viên đầy đủ không bao giờ được gửi đi. Sinh viên khác dùng ứng dụng sẽ đọc được những nội dung này, không kèm danh tính của bạn.</li>
@@ -82,24 +85,38 @@
   <li>Firebase App Check được dùng để xác nhận yêu cầu đến từ ứng dụng thật, theo Chính sách quyền riêng tư của Google.</li>
 </ul>
 
-<h2>5. Xoá dữ liệu</h2>
+<h2>5. Tìm người yêu</h2>
+
+<p>Tìm người yêu là tính năng tuỳ chọn, chỉ dành cho sinh viên đủ 18 tuổi. Chỉ khi bạn mở nó, ứng dụng mới gửi dữ liệu của tính năng này lên Firebase (Google).</p>
 
 <ul>
-  <li>Chọn <strong>Đăng xuất</strong> trong Menu để xoá khỏi điện thoại toàn bộ dữ liệu học tập và thông tin sinh viên, ảnh đại diện và ảnh bìa, lịch thi đã tải lên, phiên đăng nhập, thông báo lịch học và nội dung tiện ích. Ứng dụng chỉ giữ lại các cài đặt của điện thoại: cài đặt thông báo và các review bạn đã ẩn.</li>
+  <li><strong>Mã số sinh viên</strong> của bạn (lấy từ lần đăng nhập trang của trường) được gắn với tài khoản Firebase của điện thoại, để khi bạn cài lại ứng dụng hay đổi điện thoại, đăng nhập lại là nhận lại hồ sơ. Mã số sinh viên không bao giờ hiển thị cho người khác; hồ sơ được nhận diện bằng một mã ngẫu nhiên.</li>
+  <li>Nếu bạn tạo hồ sơ, những gì sau được lưu trên máy chủ Firebase và <strong>hiển thị cho sinh viên khác dùng tính năng</strong>: ảnh bạn chọn, khoá (lấy từ 4 số đầu mã số sinh viên, hiển thị dạng K68), khoa/viện, dòng giới thiệu, số tim bài của bạn nhận được, và thời điểm đăng. Giới tính và người bạn muốn tìm được lưu để chọn ai thấy bài của bạn.</li>
+  <li><strong>Thông tin liên lạc</strong> bạn để lại chỉ người đã kết đôi với bạn đọc được. <strong>Lời tỏ tình</strong> chỉ người gửi và người nhận đọc được. Ai đã thả tim cho bạn không hiện với ai, trừ khi hai người thả tim cho nhau.</li>
+  <li>Tim, lời tỏ tình, kết đôi, ngày bắt đầu của cặp đôi, báo cáo và danh sách chặn được lưu trên Firebase để tính năng hoạt động. Hồ sơ bị nhiều người báo cáo sẽ bị ẩn.</li>
+  <li>Tính năng không có trò chuyện trong ứng dụng.</li>
+  <li><strong>Thông báo</strong> (nếu bạn cho phép): mã nhận thông báo của điện thoại và các loại thông báo bạn chọn được lưu kèm hồ sơ trên Firebase. Máy chủ Firebase gửi thông báo qua Firebase Cloud Messaging (Google) và, trên iPhone, qua dịch vụ thông báo của Apple khi có lời tỏ tình mới, khi lời tỏ tình của bạn được đồng ý, khi bài của bạn có tim mới (gộp lại, không nói ai thả), hoặc khi có bài mới phù hợp (chỉ khi bạn bật). Nội dung thông báo không có tên hay mã số sinh viên. Đăng xuất hoặc xoá hồ sơ thì mã nhận thông báo bị xoá.</li>
+  <li>Bạn có thể sửa hồ sơ bất cứ lúc nào, và <strong>xoá hồ sơ</strong> trong mục Hồ sơ: hồ sơ, ảnh, liên lạc, tim bạn đã thả và lời tỏ tình đang chờ bị xoá; nếu đang kết đôi, cặp đôi kết thúc. Đăng xuất <strong>không</strong> xoá hồ sơ; hồ sơ không được mở trong 30 ngày sẽ tạm rời bảng tin.</li>
+</ul>
+
+<h2>6. Xoá dữ liệu</h2>
+
+<ul>
+  <li>Chọn <strong>Đăng xuất</strong> trong Menu để xoá khỏi điện thoại toàn bộ dữ liệu học tập và thông tin sinh viên, ảnh đại diện và ảnh bìa, lịch thi đã tải lên, phiên đăng nhập, thông báo lịch học và nội dung tiện ích. Ứng dụng chỉ giữ lại các cài đặt của điện thoại: cài đặt thông báo và các review bạn đã ẩn. Khoá ứng dụng được tắt.</li>
   <li>Gỡ cài đặt ứng dụng xoá toàn bộ dữ liệu, kể cả các cài đặt trên.</li>
 </ul>
 
-<p>Review học phần bạn đã đăng nằm trên máy chủ Firebase: hãy xoá chúng trong ứng dụng trước khi đăng xuất hoặc gửi email yêu cầu xoá. Ngoài review, nhà phát triển không lưu dữ liệu nào của bạn.</p>
+<p>Review học phần bạn đã đăng và hồ sơ Tìm người yêu nằm trên máy chủ Firebase: hãy xoá chúng trong ứng dụng hoặc gửi email yêu cầu xoá. Ngoài hai phần này, nhà phát triển không lưu dữ liệu nào của bạn.</p>
 
-<h2>6. Trẻ em</h2>
+<h2>7. Trẻ em</h2>
 
-<p>Ứng dụng dành cho sinh viên đại học, không hướng tới trẻ em dưới 13 tuổi.</p>
+<p>Ứng dụng dành cho sinh viên đại học, không hướng tới trẻ em dưới 13 tuổi. Tìm người yêu chỉ dành cho người đủ 18 tuổi.</p>
 
-<h2>7. Thay đổi chính sách</h2>
+<h2>8. Thay đổi chính sách</h2>
 
 <p>Khi chính sách thay đổi, nội dung mới được đăng trên trang này và ngày hiệu lực ở đầu trang được cập nhật.</p>
 
-<h2>8. Liên hệ</h2>
+<h2>9. Liên hệ</h2>
 
 <p>Email: <a href="mailto:rabbitvy.dev@gmail.com">rabbitvy.dev@gmail.com</a></p>
 </section>
@@ -109,7 +126,7 @@
 <section id="en" lang="en">
 <h1>Privacy Policy – iLoveBK</h1>
 
-<p class="date">Effective date: 11 November 2026</p>
+<p class="date">Effective date: 23 November 2026</p>
 
 <p>iLoveBK is a study management tool for students of Hanoi University of Science and Technology (HUST), built independently by a former student.</p>
 
@@ -117,6 +134,7 @@
 
 <ul>
   <li>You enter your student ID, password and captcha on the app's sign-in screen. The app passes them to the university's own sign-in page (ctt-sis.hust.edu.vn), loaded out of sight inside the app, which encrypts the password and sends it straight to the university. The app <strong>does not store</strong> your password and sends it nowhere else.</li>
+  <li>You can also choose <strong>Sign in with Office 365</strong>. The app then opens Microsoft's sign-in page (login.microsoftonline.com) inside the app; you enter your university Office 365 account on Microsoft's own page, and Microsoft vouches for you to the university's website. The app <strong>does not read or store</strong> your Office 365 password. Microsoft may keep its own sign-in cookie in the app so you need not type it again next time; it is deleted when you sign out.</li>
   <li>Your device may offer to save the password in your password manager (iCloud Keychain, Google Password Manager). Whether to save it is your choice, handled by the operating system, not by the app.</li>
   <li>The app keeps only the session cookie issued by the university's website, to read your data for you. It is deleted when you sign out or when it expires.</li>
 </ul>
@@ -135,7 +153,7 @@
 <p>The app also reads the current teaching week and semester from the public site sis.hust.edu.vn, without signing in.</p>
 
 <ul>
-  <li>All of this is stored <strong>only on your device</strong>. It is never sent to the developer or any other party; the developer cannot see your data. The one exception is course reviews, if you use them (section 4).</li>
+  <li>All of this is stored <strong>only on your device</strong>. It is never sent to the developer or any other party; the developer cannot see your data. The exceptions are course reviews and Tìm người yêu, if you use them (sections 4 and 5).</li>
 </ul>
 
 <h2>3. Other features</h2>
@@ -148,12 +166,14 @@
   <li>Exam schedules: if you upload the university's exam schedule PDF, the app receives only the file you choose through the system's file picker, reads it on the device and keeps the schedule it read on the device, to match against your timetable; the file is sent nowhere, and the schedule is deleted when you sign out.</li>
   <li>The campus map is built into the app (data from OpenStreetMap) and works offline. The app does not ask for your location. "Chỉ đường" opens Google Maps with the building as the destination; the directions are handled by Google Maps.</li>
   <li>Online class links in your timetable open in your browser or the matching app on your device.</li>
+  <li>App lock (if you turn it on) uses your device's Face ID, fingerprint or screen-lock passcode. Recognition is done by the operating system; the app only learns whether unlocking succeeded, and receives no face, fingerprint or passcode data.</li>
   <li>This policy and the Terms of Use open in your browser from nhatlx.github.io; the app keeps no copy of them.</li>
+  <li>Version check: each time it opens, the app asks Firebase Remote Config (Google) whether a newer version is out, to suggest updating, or to require it when the version in use no longer works. This carries a random installation ID that Firebase gives the app, and no student ID, name or academic data. Firebase App Check is also used to confirm the request comes from the genuine app.</li>
 </ul>
 
-<h2>4. Course reviews (the one exception)</h2>
+<h2>4. Course reviews</h2>
 
-<p>Course reviews (Review học phần) are optional. Only when you open them does the app connect to Firebase (Google) and create an <strong>anonymous</strong> account for the device, not linked to your name, student ID or email.</p>
+<p>Course reviews (Review học phần) are optional. Only when you open them does the app create an <strong>anonymous</strong> account on Firebase (Google) for the device, not linked to your name or email. If you use Tìm người yêu, this account is linked to your student ID (section 5); reviews still show anonymously to others.</p>
 
 <ul>
   <li>Only what you write and post is stored on Firebase's servers: the star rating, the difficulty and workload scores, quick tags, the lecturer you vote for, your text, <strong>the first four digits of your student ID</strong> (your year of entry, shown as 2023****), and your letter grade for the course <strong>if you choose to share it</strong>. Your full student ID is never sent. Other students using the app can read these, without your identity.</li>
@@ -163,24 +183,38 @@
   <li>Firebase App Check is used to confirm requests come from the genuine app, under Google's Privacy Policy.</li>
 </ul>
 
-<h2>5. Deleting your data</h2>
+<h2>5. Tìm người yêu (dating)</h2>
+
+<p>Tìm người yêu is optional and only for students aged 18 or over. Only when you open it does the app send this feature's data to Firebase (Google).</p>
 
 <ul>
-  <li><strong>Sign out</strong> from the Menu to delete from the device all your academic records and student information, your avatar and cover photo, the exam schedules you uploaded, the sign-in session, class reminders and the widget's contents. The app keeps only the device's own settings: your reminder settings and reviews you hid.</li>
+  <li>Your <strong>student ID</strong> (taken from your sign-in to the school's site) is linked to the device's Firebase account, so that after reinstalling the app or changing phones, signing in again gets your profile back. Your student ID is never shown to anyone; profiles are identified by a random ID.</li>
+  <li>If you create a profile, the following is stored on Firebase's servers and <strong>shown to other students using the feature</strong>: the photo you choose, your intake (from the first four digits of your student ID, shown as K68), your faculty, your bio, the number of hearts your post has received, and when it was posted. Your gender and who you are looking for are stored to decide who sees your post.</li>
+  <li>The <strong>contact</strong> you leave can only be read by the person you are matched with. A <strong>confession</strong> can only be read by its sender and recipient. Who gave you a heart is shown to no one, unless two people give each other one.</li>
+  <li>Hearts, confessions, matches, a couple's start date, reports and block lists are stored on Firebase for the feature to work. A profile reported by several users is hidden.</li>
+  <li>There is no in-app chat.</li>
+  <li><strong>Notifications</strong> (if you allow them): your device's notification token and the kinds of notification you choose are stored with your profile on Firebase. Firebase's servers send notifications through Firebase Cloud Messaging (Google) and, on iPhone, Apple's push service when you receive a confession, when your confession is accepted, when your post gets new hearts (grouped, never saying who), or when a matching new post appears (only if you turn it on). Notifications carry no name or student ID. Signing out or deleting your profile deletes the token.</li>
+  <li>You can edit your profile at any time and <strong>delete it</strong> under Hồ sơ: the profile, photo, contact, hearts you gave and confessions still waiting are deleted, and any match ends. Signing out does <strong>not</strong> delete your profile; a profile not opened for 30 days leaves the feed.</li>
+</ul>
+
+<h2>6. Deleting your data</h2>
+
+<ul>
+  <li><strong>Sign out</strong> from the Menu to delete from the device all your academic records and student information, your avatar and cover photo, the exam schedules you uploaded, the sign-in session, class reminders and the widget's contents. The app keeps only the device's own settings: your reminder settings and reviews you hid. App lock is turned off.</li>
   <li>Uninstalling the app deletes all of its data, those settings included.</li>
 </ul>
 
-<p>Course reviews you posted are on Firebase's servers: delete them in the app before signing out, or email to ask for their removal. Apart from reviews, the developer holds none of your data.</p>
+<p>Course reviews you posted and your Tìm người yêu profile are on Firebase's servers: delete them in the app, or email to ask for their removal. Apart from these, the developer holds none of your data.</p>
 
-<h2>6. Children</h2>
+<h2>7. Children</h2>
 
-<p>The app is intended for university students and is not directed at children under 13.</p>
+<p>The app is intended for university students and is not directed at children under 13. Tìm người yêu is only for people aged 18 or over.</p>
 
-<h2>7. Changes</h2>
+<h2>8. Changes</h2>
 
 <p>If this policy changes, the new version will be published on this page and the effective date above updated.</p>
 
-<h2>8. Contact</h2>
+<h2>9. Contact</h2>
 
 <p>Email: <a href="mailto:rabbitvy.dev@gmail.com">rabbitvy.dev@gmail.com</a></p>
 </section>
